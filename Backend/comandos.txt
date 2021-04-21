@@ -1,0 +1,8 @@
+- Comandos para crear el proyecto e instalar modulos
+npm init -y
+npm install express mysql
+npm install cors morgan
+npm install nodemon -D
+
+- Comando para correr el servidor
+npm run dev
