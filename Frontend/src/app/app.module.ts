@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HistorialcompraComponent } from './components/historialcompra/historialcompra.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HistorialcompraComponent
   ],
   imports: [
     BrowserModule,
