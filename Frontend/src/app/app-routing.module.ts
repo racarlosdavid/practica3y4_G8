@@ -4,6 +4,8 @@ import { HistorialcompraComponent } from './components/historialcompra/historial
 import { PagoDePeliculasComponent } from './components/pago-de-peliculas/pago-de-peliculas.component';
 import { AlquilerComponent } from './components/alquiler/alquiler.component';
 import { LoginComponent } from './components/login/login.component';
+import { UsercliComponent } from './components/usercli/usercli.component';
+import { UseradminComponent } from './components/useradmin/useradmin.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,14 @@ const routes: Routes = [
 {
   path:'',
   component:LoginComponent
+},
+{
+  path:'cliente',
+  component:UsercliComponent
+},
+{
+  path:'admin',
+  component:UseradminComponent
 }
 
 ];

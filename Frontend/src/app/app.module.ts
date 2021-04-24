@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlquilerComponent } from './components/alquiler/alquiler.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { UsercliComponent } from './components/usercli/usercli.component';
+import { UseradminComponent } from './components/useradmin/useradmin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { MenuComponent } from './components/menu/menu.component';
     PagoDePeliculasComponent,
     AlquilerComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    UsercliComponent,
+    UseradminComponent
   ],
   imports: [
     BrowserModule,

@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     {
       if(this.tipouser == '1')
       {
-        this.router.navigate(['/userpg']);
+        this.router.navigate(['/cliente']);
       }
       else
       {
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
 
         if(this.valadmin == true)
         {
-          this.router.navigate(['/screen2']);
+          this.router.navigate(['/admin']);
         }
       }      
     }

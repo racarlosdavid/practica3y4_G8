@@ -14,5 +14,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .Bot
 {
     /*Fondo degradado: https://uigradients.com/#DayTripper */
-    background: linear-gradient(to right, #3a7bd5, #3a6073);
+    /*background: linear-gradient(to right, #3a7bd5, #3a6073);*/
+    background: linear-gradient(to top, #0f0c29, #302b63, #24243e);
+    font-family: 'Original Surfer', cursive;
+}
+.Fbot
+{
+    font-family: 'Original Surfer', cursive;
 }
