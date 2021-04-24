@@ -11,6 +11,7 @@ import { PagoService } from 'src/app/services/PagoService/pago.service';
 export class PagoDePeliculasComponent implements OnInit {
 
   moneda;
+  bandera = false;
 
   dataPago:pago ={
     Num_tarjeta: '', 
