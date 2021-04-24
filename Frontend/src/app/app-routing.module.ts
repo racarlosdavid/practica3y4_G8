@@ -6,6 +6,7 @@ import { AlquilerComponent } from './components/alquiler/alquiler.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsercliComponent } from './components/usercli/usercli.component';
 import { UseradminComponent } from './components/useradmin/useradmin.component';
+import { InventarioComponent } from './components/inventario/inventario.component'
 
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
 {
   path:'admin',
   component:UseradminComponent
+},
+{
+  path: 'inventario',
+  component: InventarioComponent
 }
 
 ];
