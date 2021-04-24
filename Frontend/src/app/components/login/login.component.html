@@ -97,7 +97,7 @@
                         </ul>
                         <div class="d-flex flex-row justify-content-center alig-items-center">
                             <label for="floatingTextarea" style="margin-left: 75px;"></label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" [(ngModel)]="opselected" (change)="Capturatipo()">
                                 <option value="0">Tipo de usuario</option>
                                 <option value="1">Cliente</option>
                                 <option value="2">Administrador</option>
@@ -109,7 +109,7 @@
                             <h1> </h1>
                         </ul>
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-primary" type="button">Ingresar</button>
+                            <button class="btn btn-primary" type="button" (click)="Capturadatos(email, contra)">Ingresar</button>
                         </div>
 
                         <ul style="margin-top: 10px;">
