@@ -7,13 +7,15 @@ import { HistorialcompraComponent } from './components/historialcompra/historial
 import { PagoDePeliculasComponent } from './components/pago-de-peliculas/pago-de-peliculas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlquilerComponent } from './components/alquiler/alquiler.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HistorialcompraComponent,
     PagoDePeliculasComponent,
-    AlquilerComponent
+    AlquilerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
