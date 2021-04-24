@@ -13,6 +13,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UsercliComponent } from './components/usercli/usercli.component';
 import { UseradminComponent } from './components/useradmin/useradmin.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
+import { InventarioComponent } from './components/inventario/inventario.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
     MenuComponent,
     UsercliComponent,
     UseradminComponent,
-    MenuadminComponent
+    MenuadminComponent,
+    InventarioComponent
   ],
   imports: [
     BrowserModule,
