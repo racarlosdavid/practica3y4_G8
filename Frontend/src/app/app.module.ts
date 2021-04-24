@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HistorialcompraComponent } from './components/historialcompra/historialcompra.component';
@@ -14,6 +14,7 @@ import { UsercliComponent } from './components/usercli/usercli.component';
 import { UseradminComponent } from './components/useradmin/useradmin.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { InventarioComponent } from './components/inventario/inventario.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { InventarioComponent } from './components/inventario/inventario.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
