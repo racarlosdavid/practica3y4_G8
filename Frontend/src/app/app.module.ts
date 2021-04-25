@@ -14,6 +14,7 @@ import { UsercliComponent } from './components/usercli/usercli.component';
 import { UseradminComponent } from './components/useradmin/useradmin.component';
 import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { InventarioComponent } from './components/inventario/inventario.component';
+import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { InventarioComponent } from './components/inventario/inventario.componen
     UsercliComponent,
     UseradminComponent,
     MenuadminComponent,
-    InventarioComponent
+    InventarioComponent,
+    TransferenciaComponent
   ],
   imports: [
     BrowserModule,
