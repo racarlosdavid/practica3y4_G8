@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventarioComponent implements OnInit {
 
-  constructor() { }
+  imagePath:String
+
+  constructor() { 
+    this.imagePath = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTXwLPDL54FTa0crTnhYDxZFKEAvifGbYuoXtsldGIhsgRbyYtZ'
+   }
 
   ngOnInit(): void {
   }

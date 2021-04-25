@@ -3,6 +3,11 @@ h1{
     font-size: 5vw;
     line-height: 1.2em;
 }
+h3{
+    color: #000;
+    font-size: 2vw;
+    line-height: 1.2em;
+}
 .contenedor{
     display: fixed;
     padding-top: 50px;
@@ -13,6 +18,7 @@ h1{
     background-color: #fff;
 }
 .inventario{
+    margin: 35px;
     width: 90%;
     height: auto;
     background-color: #fff;
@@ -21,11 +27,14 @@ h1{
     display:inline-block;
     
 }
-.card{
-    margin-left: 10px;
-    min-width: 204;
-    min-height: 304;
-    max-width: 205;
-    max-height: 305;
-    float: left;
+input, select{
+    width: 50%;
+}
+button{
+    margin-top: 5px;
+    background-color: #292652;
+    color: #fff;
+}
+button:hover{
+    color: #8F8F91;
 }
