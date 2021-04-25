@@ -16,6 +16,13 @@ import { MenuadminComponent } from './components/menuadmin/menuadmin.component';
 import { InventarioComponent } from './components/inventario/inventario.component';
 import { TransferenciaComponent } from './components/transferencia/transferencia.component';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,16 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
