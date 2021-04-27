@@ -23,6 +23,7 @@ import { MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list'; 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { RegistrouserComponent } from './components/registrouser/registrouser.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
     UseradminComponent,
     MenuadminComponent,
     InventarioComponent,
-    TransferenciaComponent
+    TransferenciaComponent,
+    RegistrouserComponent
   ],
   imports: [
     BrowserModule,
