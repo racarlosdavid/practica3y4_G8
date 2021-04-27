@@ -25,6 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { RegistrouserComponent } from './components/registrouser/registrouser.component';
 
+import { UsersService } from './services/Userservice/users.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,7 @@ import { RegistrouserComponent } from './components/registrouser/registrouser.co
     MatFormFieldModule,
     MatSelectModule,
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,6 +18,7 @@ app.use('/pagoDePeliculas',require('./routes/pagoDePeliculas'));
 app.use('/inventarioDePeliculas',require('./routes/inventarioDePeliculas'));
 app.use('/usuarios',require('./routes/listaUsuarios'));
 app.use('/transferenciaDePeliculas',require('./routes/transferenciaDePeliculas'));
+app.use('/registrousuario', require('./routes/registrouser'));
 
 app.listen(port,()=>{
     console.log('Servidor en el puerto', port);
