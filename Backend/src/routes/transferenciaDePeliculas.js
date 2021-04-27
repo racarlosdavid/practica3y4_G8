@@ -5,7 +5,11 @@ const mysqlConnection = require('../mysql_connection');
 
 router.post('/',  function(req, res, next) {
     console.log(req.body)
-    mysqlConnection.query('SELECT P.idpelicula, P.name, P.image, A.llave, A.fecha FROM Pelicula P INNER JOIN Alquiler A ON A.idpelicula = P.idpelicula WHERE A.dpi = ' + req.body.dpi + ';', function(err, rows, fields) {
+    mysqlConnection.query('UPDATE Alquiler SET dpi = ' + req.body.dpi +
+    ' WHERE  idpelicula = ' + req.body.idpelicula +
+    ' AND llave = \''+ req.body.llave +
+    '\' AND dpi = '+ req.body.dpiOwner +
+    ';', function(err, rows, fields) {
         if (err) throw err;
         res.send(rows);
     });
