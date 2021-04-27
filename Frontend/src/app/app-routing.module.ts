@@ -8,6 +8,7 @@ import { UsercliComponent } from './components/usercli/usercli.component';
 import { UseradminComponent } from './components/useradmin/useradmin.component';
 import { InventarioComponent } from './components/inventario/inventario.component'
 import { TransferenciaComponent } from './components/transferencia/transferencia.component'
+import { RegistrouserComponent } from './components/registrouser/registrouser.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
 {
   path: 'transferencia',
   component: TransferenciaComponent
+},
+{
+  path: 'registro',
+  component: RegistrouserComponent
 }
 
 ];
