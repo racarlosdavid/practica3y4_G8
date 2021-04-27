@@ -2,6 +2,7 @@
     <table class="table table-hover">
         <thead class="bg-dark text-white">
             <tr align="center">
+                <th  scope="col">ID_Transaccion</th>
                 <th  scope="col">Numero de Targeta</th>
                 <th  scope="col">Nombre de Targeta</th>
                 <th  scope="col">Fecha Expiracion</th> 
@@ -12,12 +13,12 @@
         </thead>
         <tbody>
             <tr *ngFor = "let trans of transacciones">
-                <td align="center">{{trans.targeta}}</td>
-                <td align="center">{{trans.nombre}}</td>
-                <td align="center">{{trans.fecha}}</td>
-                <td align="center">{{trans.monto}}</td>
-                <td align="center">{{trans.codigo}}</td>
-                <td align="center">{{trans.moneda}}</td>
+                <td align="center">{{trans.Id_transaccion}}</td>
+                <td align="center">{{trans.Num_tarjeta}}</td>
+                <td align="center">{{trans.Nombre_tarjeta}}</td>
+                <td align="center">{{trans.Fecha_vencimiento}}</td>
+                <td align="center">{{trans.Total}}</td>
+                <td align="center">{{trans.CVV}}</td>
             </tr>
         </tbody>
     </table>
