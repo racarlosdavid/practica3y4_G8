@@ -15,6 +15,7 @@ app.use(cors());
 app.use('/',require('./routes/index'))
 app.use('/saludo',require('./routes/Saludo'));
 app.use('/pagoDePeliculas',require('./routes/pagoDePeliculas'));
+app.use('/inventarioDePeliculas',require('./routes/inventarioDePeliculas'));
 
 app.listen(port,()=>{
     console.log('Servidor en el puerto', port);
