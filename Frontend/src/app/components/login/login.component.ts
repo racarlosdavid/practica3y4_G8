@@ -65,6 +65,12 @@ export class LoginComponent implements OnInit {
     }
   };
 
+  //Ir a registro
+  Registro()
+  {
+    this.router.navigate(['/registro']);
+  }
+
   //---------Funciones de verificación
   //Función de verificación de campos
   Verifcamposllenos(correo:string, contra:string): boolean
