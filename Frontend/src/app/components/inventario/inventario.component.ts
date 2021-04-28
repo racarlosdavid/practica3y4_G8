@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Inventario } from 'src/app/models/inventario'
+import { InventarioService } from 'src/app/services/Inventario/inventario.service'
 
 @Component({
   selector: 'app-inventario',
@@ -7,13 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventarioComponent implements OnInit {
 
-  imagePath:String
+  inventario:any
+  dpi:number
 
-  constructor() { 
-    this.imagePath = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTXwLPDL54FTa0crTnhYDxZFKEAvifGbYuoXtsldGIhsgRbyYtZ'
+  constructor(private lectura:InventarioService) {
+    this.dpi = 1
    }
 
   ngOnInit(): void {
+    this.cargarPeliculas()
   }
 
+  cargarPeliculas(){
+    this.lectura.getInventario(this.dpi).subscribe((res) =>{
+      this.inventario = <Inventario[]>res
+    })
+  }
 }
