@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { RegistrouserComponent } from './components/registrouser/registrouser.component';
 
 import { UsersService } from './services/Userservice/users.service';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UsersService } from './services/Userservice/users.service';
     MenuadminComponent,
     InventarioComponent,
     TransferenciaComponent,
-    RegistrouserComponent
+    RegistrouserComponent,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,
