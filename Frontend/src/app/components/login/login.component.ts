@@ -54,6 +54,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Al inicio se limpia el local storage
+    localStorage.clear();
   }
 
   //---------Métodos de captura de datos
@@ -163,6 +165,12 @@ export class LoginComponent implements OnInit {
           {
             this.objstorage = this.obadmin;
             console.log(this.objstorage.dpi);
+
+            //Guardado en el LocalStorage
+            localStorage.setItem('dpi', this.objstorage.dpi);
+
+            //Redirigir
+            this.router.navigate(['/admin']);
           }
           else
           {
@@ -188,6 +196,12 @@ export class LoginComponent implements OnInit {
           {
             this.objstorage = this.obadmin;
             console.log(this.objstorage.dpi);
+
+            //Guardado en el LocalStorage
+            localStorage.setItem('dpi', this.objstorage.dpi);
+
+            //Redirigir
+            this.router.navigate(['/admin']);
           }
           else
           {
@@ -226,6 +240,12 @@ export class LoginComponent implements OnInit {
         //La respuesta se almacena en el objstorage
         this.objstorage = res;
         console.log(this.objstorage.dpi);
+
+        //Guardado en el LocalStorage
+        localStorage.setItem('dpi', this.objstorage.dpi);
+
+        //Redirigir
+        this.router.navigate(['/cliente']);
       },
       err => {
         console.error(err);
@@ -241,7 +261,13 @@ export class LoginComponent implements OnInit {
         console.log(res);
         //La respuesta se almacena en el objstorage
         this.objstorage = res;
-        //console.log(this.objstorage.dpi);
+        console.log(this.objstorage.dpi);
+
+        //Guardado en el LocalStorage
+        localStorage.setItem('dpi', this.objstorage.dpi);
+
+        //Redirigir
+        this.router.navigate(['/cliente']);
       },
       err => {
         console.error(err);

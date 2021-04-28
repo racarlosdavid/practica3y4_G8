@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menuadmin',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuadminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    //Se verifica que el local storage almacen un dpi para verificar login correcto
+    if(localStorage.getItem('dpi') === null)
+    {
+      this.router.navigate(['']);
+    }
   }
 
 }
