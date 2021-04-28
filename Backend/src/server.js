@@ -20,6 +20,10 @@ app.use('/usuarios',require('./routes/listaUsuarios'));
 app.use('/transferenciaDePeliculas',require('./routes/transferenciaDePeliculas'));
 app.use('/registrousuario', require('./routes/registrouser'));
 app.use(require('./routes/historialCompra'));
+app.use('/obtenerusuarios', require('./routes/obtenerusuarios'));
+app.use('/logusuario', require('./routes/logusuario'));
+app.use('/logusuariomail', require('./routes/logusuariomail'));
+app.use('/admincheck', require('./routes/admincheck'));
 
 app.listen(port,()=>{
     console.log('Servidor en el puerto', port);
