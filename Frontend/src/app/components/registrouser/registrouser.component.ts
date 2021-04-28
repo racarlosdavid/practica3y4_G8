@@ -13,6 +13,7 @@ export class RegistrouserComponent implements OnInit {
 
   //Se utiliza una interfaz para almacenar la info del usuario
   newuser: Usuario = {
+    dpi: '',
     usuario: '',
     correo: '',
     contrasenia: '',
@@ -29,10 +30,8 @@ export class RegistrouserComponent implements OnInit {
   //Método para guardar un nuevo usuario
   SaveUser()
   {
-    //Parsing del número
-    var num = Number(this.newuser.edad);
-    //Se retorna el dato casteado
-    this.newuser.edad = num;
+    //Se realiza el parsing de string a number
+    this.CastearDatos()
 
     //Llamado al servicio
     this.usersService.saveUser(this.newuser).subscribe(
@@ -48,6 +47,17 @@ export class RegistrouserComponent implements OnInit {
     
     //Luego de la consulta se limpia el formulario
     this.LimpiarForm();
+  }
+
+  //Método para hacer el casteo de string a number
+  CastearDatos()
+  {
+    //Una variable auxiliar toma el valor y lo retorna ya casteado
+    var aux = Number(this.newuser.edad);
+    this.newuser.edad = aux;
+
+    aux = Number(this.newuser.dpi);
+    this.newuser.dpi = aux;
   }
 
   //Limpieza de campos

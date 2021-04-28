@@ -47,6 +47,10 @@
                                 style="margin-bottom: 15px">
                         </div>
                         <div class="form-group">
+                            <input type="text" name="dpi" [(ngModel)]="newuser.dpi" placeholder="DPI" class="form-control"
+                                style="margin-bottom: 15px">
+                        </div>
+                        <div class="form-group">
                             <input type="text" name="correo" [(ngModel)]="newuser.correo" placeholder="Correo" class="form-control"
                                 style="margin-bottom: 15px">
                         </div>
@@ -55,7 +59,7 @@
                                 style="margin-bottom: 15px">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="contra" [(ngModel)]="newuser.contrasenia" placeholder="Contraseña" class="form-control"
+                            <input type="password" name="contra" [(ngModel)]="newuser.contrasenia" placeholder="Contraseña" class="form-control"
                                 style="margin-bottom: 30px;">
                         </div>
                         <!-- <button class="btn btn-success btn-block" (click)="edit ? updateGame() : saveNewGame()"> -->
