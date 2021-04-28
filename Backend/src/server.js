@@ -20,6 +20,7 @@ app.use('/usuarios',require('./routes/listaUsuarios'));
 app.use('/transferenciaDePeliculas',require('./routes/transferenciaDePeliculas'));
 app.use('/registrousuario', require('./routes/registrouser'));
 app.use(require('./routes/historialCompra'));
+app.use('/alquiler',require('./routes/alquiler'));
 
 app.listen(port,()=>{
     console.log('Servidor en el puerto', port);
