@@ -18,4 +18,8 @@ export class MenuComponent implements OnInit {
     }
   }
 
+  cerrarSesion(){
+    localStorage.clear()
+    this.router.navigate(['']);
+  }
 }
