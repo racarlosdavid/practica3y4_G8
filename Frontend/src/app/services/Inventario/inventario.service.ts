@@ -15,4 +15,7 @@ export class InventarioService {
   public getInventario(dpi:number):Observable<any>{
     return this.http.post(`${this.URL}/inventarioDePeliculas`,{dpi});
   }
+  public transferir(dpi:number,idpelicula:number,llave:string,dpiOwner:number){
+    return this.http.post(`${this.URL}/transferenciaDePeliculas`,{dpi,idpelicula,llave,dpiOwner})
+  }
 }

@@ -9,11 +9,11 @@ import { InventarioService } from 'src/app/services/Inventario/inventario.servic
 })
 export class InventarioComponent implements OnInit {
 
-  inventario:any
+  inventario = []
   dpi:number
 
   constructor(private lectura:InventarioService) {
-    this.dpi = 1
+    this.dpi = Number(localStorage.getItem('dpi'))
    }
 
   ngOnInit(): void {
@@ -22,7 +22,12 @@ export class InventarioComponent implements OnInit {
 
   cargarPeliculas(){
     this.lectura.getInventario(this.dpi).subscribe((res) =>{
-      this.inventario = <Inventario[]>res
+      let alquiler = <Inventario[]>res
+      for(let item of alquiler){
+        if(item.llave != null){
+          this.inventario.push(item)
+        }
+      }
     })
   }
 }
