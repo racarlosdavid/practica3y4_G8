@@ -16,7 +16,7 @@ export class HistorialcompraComponent implements OnInit {
 
     //aqui se llamara al servicion para el historial de compras
     let envi= {id:""};
-      envi.id = "2";
+      envi.id = localStorage.getItem('dpi');
     //this.historial.HistorialPago(localStorage.getItem('id'));
     this.historial.HistorialPago(envi)
       .subscribe(data =>{
