@@ -1,8 +1,9 @@
 export interface pago {
+    Id_transaccion: number|null,
     Num_tarjeta: string,
     Nombre_tarjeta: string,
     Fecha_vencimiento: string,
-    cvv: number|null,
+    CVV: number|null,
     Total: number|null,
-    Id_usuario: number|null
+    dpi: number|null
 }
