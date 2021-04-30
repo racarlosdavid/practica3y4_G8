@@ -5,13 +5,14 @@ const mysqlConnection = require('../mysql_connection');
 
 router.post('/',  function(req, res) {
     console.log(req.body);
-    mysqlConnection.query('INSERT INTO Pago (Num_tarjeta,Nombre_tarjeta,Fecha_vencimiento,cvv,Total,Id_usuario) VALUES ('+
-    '\''+req.body.Num_tarjeta+"\' "+       
-    ',\''+req.body.Nombre_tarjeta+"\' "+
-    ',\''+req.body.Fecha_vencimiento+"\' "+
-    ','+req.body.cvv+
+    mysqlConnection.query('INSERT INTO Pago (Id_transaccion,Num_tarjeta,Nombre_tarjeta,Fecha_vencimiento,CVV,Total,dpi) VALUES ('+
+    req.body.Id_transaccion+
+    ',\''+req.body.Num_tarjeta+'\''+       
+    ',\''+req.body.Nombre_tarjeta+'\''+
+    ',\''+req.body.Fecha_vencimiento+'\''+
+    ','+req.body.CVV+
     ','+req.body.Total+
-    ','+req.body.Id_usuario+')'
+    ','+req.body.dpi+')'
     , function(err, rows, fields) {
         if (err) throw err;
         res.json({ message: "Pago insertado en la base de datos" });

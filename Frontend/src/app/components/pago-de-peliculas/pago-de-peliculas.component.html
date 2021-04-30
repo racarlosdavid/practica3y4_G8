@@ -1,38 +1,6 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>Pago</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
-
-    <!-- Bootstrap core CSS -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="pago-de-peliculas.component.css" rel="stylesheet">
-  </head>
-  <body class="bg-light">
-    <div class="container">
+<app-menu></app-menu>
+<div class="container">
   <div class="py-5 text-center">
     <h2>Pago de Peliculas</h2>
    </div>
@@ -45,8 +13,7 @@
       <ul class="list-group mb-3">
  
         <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <input type="text" [(ngModel)]="dataPago.Total" class="form-control" name="Total"  placeholder="$0" required>
+          <span>Total (USD)  $ {{dataPago.Total}}</span>
         </li>
       </ul>
 
@@ -81,7 +48,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="cc-cvv">CVV</label>
-            <input type="text" [(ngModel)]="dataPago.cvv" class="form-control" name="cc-cvv" placeholder="" required>
+            <input type="text" [(ngModel)]="dataPago.CVV" class="form-control" name="cc-cvv" placeholder="" required>
             <div class="invalid-feedback">
               Debe ingresar el codigo de seguridad
             </div>
@@ -101,7 +68,3 @@
     <p class="mb-1">&copy; 2021 AYD1</p>
   </footer>
 </div>
-
-    
-    </body>
-</html>

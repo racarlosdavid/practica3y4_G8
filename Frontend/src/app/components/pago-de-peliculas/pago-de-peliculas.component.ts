@@ -12,14 +12,18 @@ export class PagoDePeliculasComponent implements OnInit {
 
   moneda;
   bandera = false;
+  local_dpi:number = 0;
+  local_id_transaccion:number = 0;
+  local_total:number = 0;
 
   dataPago:pago ={
+    Id_transaccion:null,
     Num_tarjeta: '', 
     Nombre_tarjeta: '',
     Fecha_vencimiento: '',
-    cvv: null,
+    CVV: null,
     Total: null,
-    Id_usuario: null
+    dpi: null
 }
 
   constructor(private pagoService:PagoService, private router:Router) { }
@@ -36,6 +40,29 @@ export class PagoDePeliculasComponent implements OnInit {
         alert(err.respuesta);
       }
     );
+
+    //Obtengo el dpi del usuario logueado
+    this.local_dpi = Number(localStorage.getItem('dpi'));
+
+    this.local_id_transaccion = Number(localStorage.getItem('llave_pago'));
+
+    this.local_total = Number(localStorage.getItem('total'));
+
+    if (this.local_dpi != 0) {
+      this.dataPago.dpi = this.local_dpi; 
+    }else{
+      this.dataPago.dpi = 1;
+    }
+
+    if (this.local_id_transaccion != 0) {
+      this.dataPago.Id_transaccion = this.local_id_transaccion; 
+    }else{
+      this.dataPago.Id_transaccion = Math.floor((Math.random() * 10000000) + 1);;
+    }
+
+    if (this.local_total != 0) {
+      this.dataPago.Total = this.local_total; 
+    }
 
     (function () {
       'use strict'
@@ -101,23 +128,28 @@ export class PagoDePeliculasComponent implements OnInit {
   }
 
   procesar(){
+    console.log(this.local_dpi," local storage del user");
     //let salida = "La tarjeta tiene 16 digitos " + this.validarTarjeta16Digitos(this.dataPago.Num_tarjeta) + " el cvv tiene 3 digitos " + this.validarCodigoCVV(this.dataPago.cvv)+
     //" validacion de fecha "+ this.validarFecha(this.dataPago.Fecha_vencimiento) ;
     //console.log(salida);
     //console.log(this.aplicarExchangeRate(this.moneda,this.dataPago.Total));
     //console.log(this.dataPago);
-    this.dataPago.Id_usuario = 10; //Esta quemado para pruebas porque no han implementado localstorage para obtenerlos al momento que se loguea el usuario
+    
 
-    if (this.validarTarjeta16Digitos(this.dataPago.Num_tarjeta) && this.validarCodigoCVV(this.dataPago.cvv) && this.validarFecha(this.dataPago.Fecha_vencimiento)) {
+
+    if (this.validarTarjeta16Digitos(this.dataPago.Num_tarjeta) && this.validarCodigoCVV(this.dataPago.CVV) && this.validarFecha(this.dataPago.Fecha_vencimiento) && this.dataPago.Total != null) {
       //Encripto la tarjeta
       this.dataPago.Num_tarjeta = this.encriptarTarjeta(this.dataPago.Num_tarjeta);
       //Aplico el tipo de cambio al total
-      this.aplicarExchangeRate(this.moneda,this.dataPago.Total);
+      this.dataPago.Total = this.aplicarExchangeRate(this.moneda,this.dataPago.Total);
       //Almaceno el pago en la base de datos
       this.pagoService.ingresarPago(this.dataPago).subscribe(
         res=>{
           alert(res.message);
-            this.router.navigate(['/']);
+          this.local_dpi = 0;
+          this.local_id_transaccion = 0; 
+          this.local_total = 0; 
+          this.router.navigate(['/cliente']);
         },err=>{
           alert(err.respuesta);
         }
