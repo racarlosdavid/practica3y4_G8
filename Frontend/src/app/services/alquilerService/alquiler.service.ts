@@ -5,15 +5,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 //Import de rutas
 import { API_URL } from '../URL';
-//Import del modelo de dato newusuario
-import { Usuario } from '../../models/Usuario'
+//Import del modelo de dato alquiler
+import { alquiler } from '../../models/alquiler'
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class alquilerService {
 
+
+export class alquilerService {
   //Se obtiene la ruta
   API_URI = API_URL;
 
@@ -24,10 +25,10 @@ export class alquilerService {
     "Content-Type": "application/json"
   });
 
-  //Método para inserción de nuevo usuario
-  saveUser(user: Usuario)
+  //Método para inserción de nuevo alquiler
+  saveAlquiler(alquiler: alquiler): Observable<any>
   {
-    return this.http.post(`${this.API_URI}/alquiler`, user);
+    return this.http.post(`${this.API_URI}/crearAlquiler`, alquiler);
   }
 
   //metodos para obtener lista de peliculas
