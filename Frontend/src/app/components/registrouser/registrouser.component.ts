@@ -64,5 +64,6 @@ export class RegistrouserComponent implements OnInit {
   LimpiarForm()
   {
     document.forms["idform"].reset();
+    console.log('Formulario limpio');
   }
 }
