@@ -6,7 +6,7 @@ const mysqlConnection = require('../mysql_connection');
 router.post('/',  function(req, res) {
     console.log(req.body);
     mysqlConnection.query('INSERT INTO Pago (Id_transaccion,Num_tarjeta,Nombre_tarjeta,Fecha_vencimiento,CVV,Total,dpi) VALUES ('+
-    req.body.Id_transaccion+
+    '\''+req.body.Id_transaccion+'\''+
     ',\''+req.body.Num_tarjeta+'\''+       
     ',\''+req.body.Nombre_tarjeta+'\''+
     ',\''+req.body.Fecha_vencimiento+'\''+

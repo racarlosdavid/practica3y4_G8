@@ -65,10 +65,13 @@ export class AlquilerComponent {
   columnas: string[] = ['codigo', 'descripcion', 'precio', 'borrar','subtotal'];
 
   datos: Articulo[] = [
-    //Aqui van las pelioculas que se van agregando
+    //Aqui van las peliculas que se van agregando al carrito
   ];
-
   articuloselect: Articulo = new Articulo(0,"", 0,0,0);
+
+  listaAlquiler: alquiler[] = [
+    //Aqui van los alquileres a insertar
+  ];
 
   @ViewChild(MatTable) tabla1: MatTable<Articulo>;
   
@@ -104,8 +107,8 @@ export class AlquilerComponent {
 
   mostrarTotal(){
     this.lsTotal=this.sumaSubtotales(this.datos);
-    alert('El total es de Q'+this.lsTotal);
     localStorage.setItem('total', this.lsTotal.toString());
+    alert('El total es de Q'+this.lsTotal);
   }
 
   verificarCampos(valor1,valor2): boolean {
@@ -170,15 +173,32 @@ export class AlquilerComponent {
     let date: Date = new Date();
     let dpi_actual = (localStorage.getItem('dpi'));
     var llave:string;
-    llave=dpi_actual+"_"+date.getFullYear()+date.getMonth()+date.getDay()+"_"+date.getHours()+date.getMinutes()+date.getSeconds();
+    llave=dpi_actual+""+date.getFullYear()+""+date.getMonth()+""+date.getDay()+""+date.getHours()+""+date.getMinutes()+""+date.getSeconds();
+    //llave=dpi_actual+Number(date);
     console.log(llave);
     localStorage.setItem('llave_pago', llave);
 
     var fechaSQL = (new Date ((new Date((new Date(new Date())).toISOString() )).getTime() - ((new Date()).getTimezoneOffset()*60000))).toISOString().slice(0, 19).replace('T', ' ');
     console.log(fechaSQL);
 
+    
 
     for (let i in this.datos){
+      var alquilerAux:alquiler={
+        idalquiler:0,
+        llave:llave,
+        fecha:fechaSQL,
+        Usuario_dpi:Number(dpi_actual),
+        Pago_Id_transaccion:Number(llave),
+        Pelicula_idpelicula:this.datos[i].idPel
+      };
+      this.listaAlquiler.push(alquilerAux);
+    }
+    localStorage.setItem('listaAlquileres', JSON.stringify(this.listaAlquiler));
+    this.router.navigate(['/pago']);
+    localStorage.setItem('datosAlquileres', JSON.stringify(this.datos));
+    //this.router.navigate(['/pago']);
+    /*for (let i in this.datos){
       this.newAlquiler.llave=llave;
       this.newAlquiler.fecha=fechaSQL;
       this.newAlquiler.Usuario_dpi=Number(dpi_actual);
@@ -193,7 +213,7 @@ export class AlquilerComponent {
           alert(err.respuesta);
         }
       ) 
-    }
+    }*/
 
       
 
@@ -210,7 +230,7 @@ export class Articulo {
   }
 }
 
-export class Pelicula {
+export class Alquiler {
   constructor(public nombre: string,public precio:number) {
   }
 }
