@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import { pago } from 'src/app/models/pago';
 import { PagoService } from 'src/app/services/PagoService/pago.service';
 
+import { alquiler } from 'src/app/models/alquiler';
+import { alquilerService } from '../../services/alquilerService/alquiler.service';
+
+
 @Component({
   selector: 'app-pago-de-peliculas',
   templateUrl: './pago-de-peliculas.component.html',
@@ -26,7 +30,7 @@ export class PagoDePeliculasComponent implements OnInit {
     dpi: null
 }
 
-  constructor(private pagoService:PagoService, private router:Router) { }
+  constructor(private pagoService:PagoService, private router:Router,private alquilerService: alquilerService) { }
 
   ngOnInit(): void {
     //Aqui debo de setear el total que obtengo desde el carrito de compras de peliculas 
@@ -149,6 +153,7 @@ export class PagoDePeliculasComponent implements OnInit {
           this.local_dpi = 0;
           this.local_id_transaccion = 0; 
           this.local_total = 0; 
+          this.insertarAlquiler();
           this.router.navigate(['/cliente']);
         },err=>{
           alert(err.respuesta);
@@ -164,6 +169,37 @@ export class PagoDePeliculasComponent implements OnInit {
 
   }
  
+
+  newAlquiler: alquiler ={
+    idalquiler:0,
+    llave:'',
+    fecha:'',
+    Usuario_dpi:0,
+    Pago_Id_transaccion:0,
+    Pelicula_idpelicula:0
+  }
+
+  insertarAlquiler(){
+    var arreglo:alquiler=JSON.parse(localStorage.getItem('listaAlquileres'));
+    for (let i in arreglo){
+      this.newAlquiler.llave=arreglo[i].llave;
+      this.newAlquiler.fecha=arreglo[i].fecha;
+      this.newAlquiler.Usuario_dpi=arreglo[i].Usuario_dpi;
+      this.newAlquiler.Pago_Id_transaccion=arreglo[i].Pago_Id_transaccion;
+      this.newAlquiler.Pelicula_idpelicula=arreglo[i].Pelicula_idpelicula;
+      
+      console.log('****'+this.newAlquiler.Pago_Id_transaccion);
+      
+      this.alquilerService.saveAlquiler(this.newAlquiler).subscribe(
+        res=>{
+          alert(res.message);
+        },err=>{
+          alert(err.respuesta);
+        }
+      )
+
+    }
+  }
   
 
 }
