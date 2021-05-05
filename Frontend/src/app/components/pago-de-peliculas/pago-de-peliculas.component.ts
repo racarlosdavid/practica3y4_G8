@@ -17,7 +17,8 @@ export class PagoDePeliculasComponent implements OnInit {
   moneda;
   bandera = false;
   local_dpi:number = 0;
-  local_id_transaccion:number = 0;
+  //local_id_transaccion:number = 0;
+  local_id_transaccion:string = '0';
   local_total:number = 0;
 
   dataPago:pago ={
@@ -48,7 +49,8 @@ export class PagoDePeliculasComponent implements OnInit {
     //Obtengo el dpi del usuario logueado
     this.local_dpi = Number(localStorage.getItem('dpi'));
 
-    this.local_id_transaccion = Number(localStorage.getItem('llave_pago'));
+    //this.local_id_transaccion = Number(localStorage.getItem('llave_pago'));
+    this.local_id_transaccion = localStorage.getItem('llave_pago');
 
     this.local_total = Number(localStorage.getItem('total'));
 
@@ -58,10 +60,10 @@ export class PagoDePeliculasComponent implements OnInit {
       this.dataPago.dpi = 1;
     }
 
-    if (this.local_id_transaccion != 0) {
+    if (this.local_id_transaccion != '0') {
       this.dataPago.Id_transaccion = this.local_id_transaccion; 
     }else{
-      this.dataPago.Id_transaccion = Math.floor((Math.random() * 10000000) + 1);;
+      this.dataPago.Id_transaccion = ""+Math.floor((Math.random() * 10000000) + 1);;
     }
 
     if (this.local_total != 0) {
@@ -151,7 +153,7 @@ export class PagoDePeliculasComponent implements OnInit {
         res=>{
           alert(res.message);
           this.local_dpi = 0;
-          this.local_id_transaccion = 0; 
+          this.local_id_transaccion = '0'; 
           this.local_total = 0; 
           this.insertarAlquiler();
           this.router.navigate(['/cliente']);
@@ -175,7 +177,7 @@ export class PagoDePeliculasComponent implements OnInit {
     llave:'',
     fecha:'',
     Usuario_dpi:0,
-    Pago_Id_transaccion:0,
+    Pago_Id_transaccion:'0',
     Pelicula_idpelicula:0
   }
 
@@ -188,7 +190,7 @@ export class PagoDePeliculasComponent implements OnInit {
       this.newAlquiler.Pago_Id_transaccion=arreglo[i].Pago_Id_transaccion;
       this.newAlquiler.Pelicula_idpelicula=arreglo[i].Pelicula_idpelicula;
       
-      console.log('****'+this.newAlquiler.Pago_Id_transaccion);
+      //console.log('****'+this.newAlquiler.Pago_Id_transaccion);
       
       this.alquilerService.saveAlquiler(this.newAlquiler).subscribe(
         res=>{

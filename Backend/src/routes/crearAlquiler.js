@@ -16,7 +16,7 @@ router.post('/',  function(req, res)
     +'\''+req.body.llave+'\''+
     ',\''+req.body.fecha+'\''+
     ','+req.body.Usuario_dpi+
-    ','+req.body.Pago_Id_transaccion+
+    ',\''+req.body.Pago_Id_transaccion+'\''+
     ','+req.body.Pelicula_idpelicula+')'
     , function(err, rows, fields) {
         if (err) throw err;

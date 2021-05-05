@@ -11,6 +11,6 @@ export interface alquiler{
     llave:string,
     fecha: string,
     Usuario_dpi:number,
-    Pago_Id_transaccion:number,
+    Pago_Id_transaccion:string,
     Pelicula_idpelicula:number
 }
