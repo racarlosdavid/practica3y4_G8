@@ -26,7 +26,7 @@ export class AlquilerComponent {
     name:'',
     image: '',
     chargerate: 0,
-    active: '0'
+    active: 0
   }
   npelicula2:any=[];
 
@@ -153,15 +153,16 @@ export class AlquilerComponent {
         //console.log(res);
         this.npelicula2=res;
         for (var _i = 0; _i < this.npelicula2.length; _i++){
-          var aux ={
-            idpelicula:this.npelicula2[_i].idpelicula,
-            nombre:this.npelicula2[_i].name,
-            imagen:this.npelicula2[_i].image,
-            precio:this.npelicula2[_i].chargerate,
-            activo:this.npelicula2[_i].active
+            if (this.npelicula2[_i].active==1){
+              var aux ={
+              idpelicula:this.npelicula2[_i].idpelicula,
+              nombre:this.npelicula2[_i].name,
+              imagen:this.npelicula2[_i].image,
+              precio:this.npelicula2[_i].chargerate,
+              activo:this.npelicula2[_i].active
+            }
+            this.listadoPeliculas.push(aux);
           }
-        
-          this.listadoPeliculas.push(aux);
         }
       },
       err => {

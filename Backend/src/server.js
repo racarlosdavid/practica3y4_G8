@@ -26,6 +26,8 @@ app.use('/logusuario', require('./routes/logusuario'));
 app.use('/logusuariomail', require('./routes/logusuariomail'));
 app.use('/admincheck', require('./routes/admincheck'));
 app.use('/crearAlquiler', require('./routes/crearAlquiler'));
+app.use('/tablaTemporal', require('./routes/tablaTemporal'));
+
 
 app.listen(port,()=>{
     console.log('Servidor en el puerto', port);
