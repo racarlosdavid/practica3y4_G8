@@ -14,4 +14,8 @@ export class HistorialCompraService {
   HistorialPago(id: any): Observable<any> {
     return this.http.post(`${this.API}`, id);
   }
+
+  HistorialPagoAdmin(): Observable<any> {
+    return this.http.get(`${this.API}`);
+  }
 }

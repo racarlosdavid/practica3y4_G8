@@ -11,12 +11,17 @@ import { TransferenciaComponent } from './components/transferencia/transferencia
 import { RegistrouserComponent } from './components/registrouser/registrouser.component';
 import { Catalogo2Component } from './components/catalogo2/catalogo2.component';
 import { CatadminComponent } from './components/catadmin/catadmin.component';
+import { HistorialAdminComponent } from './components/historial-admin/historial-admin.component';
 
 
 const routes: Routes = [
 {
   path:'historial',
   component:HistorialcompraComponent
+},
+{
+  path:'historialAdmin',
+  component:HistorialAdminComponent
 },
 {
   path:'pago',
