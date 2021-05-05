@@ -25,6 +25,7 @@ export class TransferenciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarUsuarios()
+    this.cargarInventario()
   }
 
   cargarInventario(){
