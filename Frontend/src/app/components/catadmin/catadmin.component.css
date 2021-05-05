@@ -1,0 +1,31 @@
+h1{
+    color: #000;
+    font-size: 5vw;
+    line-height: 1.2em;
+}
+.contenedor{
+    display: fixed;
+    padding-top: 50px;
+    padding-left: 10%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.inventario{
+    width: 90%;
+    height: auto;
+    background-color: #fff;
+    padding: 42px;
+    border-radius: 10px;
+    display:inline-block;
+    
+}
+.card{
+    margin-left: 10px;
+    min-width: 204;
+    min-height: 304;
+    max-width: 205;
+    max-height: 305;
+    float: left;
+}

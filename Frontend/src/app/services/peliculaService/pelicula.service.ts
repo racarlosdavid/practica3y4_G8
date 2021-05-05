@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 //Import de rutas
 import { API_URL, API_URL_AUX } from '../URL';
 //Import del modelo de dato alquiler
-import { Pelicula } from '../../models/pelicula'
+import { Pelicula,Pelicula2 } from '../../models/pelicula'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -32,6 +32,20 @@ export class peliculaService {
   
   obtenerPelicula(): Observable<any> {
     return this.http.get(`${this.API_AUX}`);
+  }
+
+  insertarPelicula(): Observable<any>
+  {
+    return this.http.post(`${this.API_URI}/crearPelicula`, null);
+  }
+
+  obtenerUltima(){
+    return this.http.get(`${this.API_URI}/ultimaIteracion`);
+  }
+
+  editarPelicula(pelicula: Pelicula2): Observable<any>
+  {
+    return this.http.post(`${this.API_URI}/editarPelicula`, pelicula);
   }
 
 }
