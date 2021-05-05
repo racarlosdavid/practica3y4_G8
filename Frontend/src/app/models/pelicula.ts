@@ -7,3 +7,10 @@ export interface Pelicula {
     availabilities: Array<number>;
     languages: Array<number>;
 }
+
+export interface Pelicula2 {
+    name: string;
+    image: string;
+    chargerate: number;
+    active: number;
+}

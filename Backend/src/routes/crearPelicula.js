@@ -12,11 +12,7 @@ router.post('/',  function(req, res)
     console.log(req.body);
 
     //Realizamos la consulta de inserción
-    mysqlConnection.query('INSERT INTO Pelicula (name,image,chargerate,active) VALUES ('
-    +'\''+req.body.name+'\''+
-    ',\''+req.body.image+'\''+
-    ','+req.body.chargerate+
-    ','+req.body.active+')'
+    mysqlConnection.query('insert into Pelicula (name,image,chargerate,active) select distinct name,image,chargerate,active from TemporalPelicula where not exists ( select * from Pelicula where (TemporalPelicula.name = Pelicula.name) )'
     , function(err, rows, fields) {
         if (err) throw err;
         res.json({ message: "Pelicula insertada en la base de datos" });

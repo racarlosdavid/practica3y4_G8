@@ -1,1 +1,14 @@
 <app-menuadmin></app-menuadmin>
+<div class="Fbot">
+    <h1 class="text-center">Catalogo de peliculas</h1>  
+</div>
+<div class="contenedor">
+  <div class="inventario">
+      <div class="card text-white bg-dark mb-3"  wfd-id="77" *ngFor='let item of inventario'>
+          <div class="card-header" wfd-id="79">{{item.name}}</div>
+          <div class="card-body" wfd-id="78">
+            <img src="{{item.image}}" width="200" height="300" >
+          </div>
+        </div>
+  </div> 
+</div>

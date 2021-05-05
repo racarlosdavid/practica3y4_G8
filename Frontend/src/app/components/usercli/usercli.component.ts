@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Articulo } from 'src/app/components/alquiler/alquiler.component';
 import { peliculaService } from 'src/app/services/peliculaService/pelicula.service';
-import { Pelicula } from 'src/app/models/pelicula';
+import { Pelicula,Pelicula2 } from 'src/app/models/pelicula';
 
 @Component({
   selector: 'app-usercli',
@@ -21,6 +21,7 @@ export class UsercliComponent implements OnInit {
   datos: Articulo[] = [
     //Aqui van las peliculas que se van agregando al carrito
   ];
+  resultadoConsulta:any=[];
 
 
   obtenerPeliculas(){
@@ -39,6 +40,8 @@ export class UsercliComponent implements OnInit {
             languages: res[i].languages
           }
           //console.log(peliculaAux);
+
+          //Insertando las peliculas en la tabla aux
           this.peliculaService.savePelicula(peliculaAux).subscribe(
             res=>{
               //alert(res.message);
@@ -51,6 +54,46 @@ export class UsercliComponent implements OnInit {
         alert(err.respuesta);
       }
     );
+    this.insertarPeliculas();
+      this.actualizarPeliculas();
+  }
+
+  insertarPeliculas(){
+    this.peliculaService.insertarPelicula().subscribe(
+      res=> {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  actualizarPeliculas(){
+    this.peliculaService.obtenerUltima().subscribe(
+      res=> {
+        //console.log(res);
+        this.resultadoConsulta=res;
+        for(let item of this.resultadoConsulta){
+          var aux:Pelicula2 ={
+            name:item.name,
+            image:item.image,
+            chargerate:item.chargerate,
+            active:item.active
+          }
+          this.peliculaService.editarPelicula(aux).subscribe(
+            res=>{
+              //alert(res.message);
+            },err=>{
+              //alert(err.respuesta);
+            }
+          )
+        }
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 
 

@@ -27,6 +27,9 @@ app.use('/logusuariomail', require('./routes/logusuariomail'));
 app.use('/admincheck', require('./routes/admincheck'));
 app.use('/crearAlquiler', require('./routes/crearAlquiler'));
 app.use('/tablaTemporal', require('./routes/tablaTemporal'));
+app.use('/crearPelicula', require('./routes/crearPelicula'));
+app.use('/ultimaIteracion', require('./routes/ultimaIteracion'));
+app.use('/editarPelicula', require('./routes/editarPelicula'));
 
 
 app.listen(port,()=>{
