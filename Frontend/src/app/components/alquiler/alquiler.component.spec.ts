@@ -6,6 +6,7 @@ import { AlquilerComponent } from './alquiler.component';
 import { Articulo } from './alquiler.component';
 import { alquiler, listaPelicula } from 'src/app/models/alquiler';
 import { DateAdapter } from '@angular/material/core';
+import { of } from 'rxjs';
 
 
 describe('alquilerComponent', () => {

@@ -24,7 +24,9 @@ export class CatalogoComponent implements OnInit {
       this.lectura.getPelicula().subscribe((res)=>{
         let alquiler = <listaPelicula[]>res
         for(let item of alquiler){
+          if (item.active==1){
             this.inventario.push(item)
+          }  
         }
     })
   }

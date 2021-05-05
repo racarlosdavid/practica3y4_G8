@@ -3,7 +3,7 @@ export interface listaPelicula {
     name: string;
     image: string;
     chargerate: number;
-    active: string;
+    active: number;
 }
 
 export interface alquiler{
