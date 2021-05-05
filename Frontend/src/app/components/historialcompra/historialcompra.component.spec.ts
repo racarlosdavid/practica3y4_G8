@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { HistorialcompraComponent } from './historialcompra.component';
 
 describe('HistorialcompraComponent', () => {
@@ -8,7 +9,8 @@ describe('HistorialcompraComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistorialcompraComponent ]
+      declarations: [ HistorialcompraComponent ],
+      imports: [ HttpClientTestingModule,RouterTestingModule]
     })
     .compileComponents();
   });
