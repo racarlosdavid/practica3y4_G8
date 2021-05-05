@@ -9,7 +9,7 @@ import { UseradminComponent } from './components/useradmin/useradmin.component';
 import { InventarioComponent } from './components/inventario/inventario.component'
 import { TransferenciaComponent } from './components/transferencia/transferencia.component'
 import { RegistrouserComponent } from './components/registrouser/registrouser.component';
-import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { Catalogo2Component } from './components/catalogo2/catalogo2.component';
 
 
 const routes: Routes = [
@@ -51,7 +51,7 @@ const routes: Routes = [
 },
 {
   path: 'catalogo',
-  component: CatalogoComponent
+  component: Catalogo2Component
 }
 
 ];

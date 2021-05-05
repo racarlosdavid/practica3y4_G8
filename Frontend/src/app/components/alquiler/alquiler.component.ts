@@ -16,8 +16,9 @@ export class AlquilerComponent {
   constructor (private alquilerService: alquilerService,private router: Router){};
 
   ngOnInit(): void {
-    //Al iniciar se obtienen los juegos o errores
+    //Al iniciar se insertan las peliculas en la lista desplegable
     this.listaPeliculas();
+    this.datos=JSON.parse(localStorage.getItem('listaDatos'));
   }
 
   npelicula: listaPelicula={
@@ -56,7 +57,7 @@ export class AlquilerComponent {
       llave:'',
       fecha:'',
       Usuario_dpi:0,
-      Pago_Id_transaccion:0,
+      Pago_Id_transaccion:'0',
       Pelicula_idpelicula:0
     }
   
@@ -99,7 +100,8 @@ export class AlquilerComponent {
       //this.datos.push(this.crearArticulo(this.articuloselect.nombre, this.articuloselect.precio, this.articuloselect.cantidad, this.calcularsubTotal(this.articuloselect.precio, this.articuloselect.cantidad)));
       this.datos.push(this.crearArticulo(this.idAux,this.nombreAux, this.precioAux, this.articuloselect.cantidad, this.calcularsubTotal(this.precioAux, this.articuloselect.cantidad)));
       this.renderizarColumnas();
-      this.articuloselect = new Articulo(0,"", 0,0,0);  
+      this.articuloselect = new Articulo(0,"", 0,0,0);
+      localStorage.setItem('listaDatos', JSON.stringify(this.datos)); 
     }else{
       alert('Debe llenar todos los campos');
     }
@@ -185,7 +187,7 @@ export class AlquilerComponent {
         llave:llave,
         fecha:fechaSQL,
         Usuario_dpi:Number(dpi_actual),
-        Pago_Id_transaccion:Number(llave),
+        Pago_Id_transaccion:llave,
         Pelicula_idpelicula:this.datos[i].idPel
       };
       this.listaAlquiler.push(alquilerAux);

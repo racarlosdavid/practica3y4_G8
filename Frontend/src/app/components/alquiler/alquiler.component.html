@@ -1,12 +1,19 @@
 <app-menu></app-menu>
 
-
 <style>
   .content {
     display: flex;
     margin: 82px auto 32px;
     padding: 0 16px;
     max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content2 {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 1500px;
     flex-direction: column;
     align-items: center;
   }
@@ -67,4 +74,7 @@
     <button mat-raised-button color="primary" (click)="alquilar()">Aceptar</button>
   
   </div>
+</div>
+<div class="content2" role="main">
+  <app-catalogo></app-catalogo>
 </div>
