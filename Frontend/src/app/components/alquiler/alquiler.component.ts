@@ -148,7 +148,7 @@ export class AlquilerComponent {
   listaPeliculas(){
     this.alquilerService.getPelicula().subscribe(
       res=> {
-        console.log(res);
+        //console.log(res);
         this.npelicula2=res;
         for (var _i = 0; _i < this.npelicula2.length; _i++){
           var aux ={
@@ -170,18 +170,14 @@ export class AlquilerComponent {
   
 
   alquilar(){
+    this.mostrarTotal();
     let date: Date = new Date();
     let dpi_actual = (localStorage.getItem('dpi'));
-    var llave:string;
-    llave=dpi_actual+""+date.getFullYear()+""+date.getMonth()+""+date.getDay()+""+date.getHours()+""+date.getMinutes()+""+date.getSeconds();
-    //llave=dpi_actual+Number(date);
-    console.log(llave);
+    var llave:string=dpi_actual+""+date.getFullYear()+""+date.getMonth()+""+date.getDay()+""+date.getHours()+""+date.getMinutes()+""+date.getSeconds();
     localStorage.setItem('llave_pago', llave);
 
     var fechaSQL = (new Date ((new Date((new Date(new Date())).toISOString() )).getTime() - ((new Date()).getTimezoneOffset()*60000))).toISOString().slice(0, 19).replace('T', ' ');
-    console.log(fechaSQL);
-
-    
+    //console.log(fechaSQL);
 
     for (let i in this.datos){
       var alquilerAux:alquiler={
@@ -195,34 +191,12 @@ export class AlquilerComponent {
       this.listaAlquiler.push(alquilerAux);
     }
     localStorage.setItem('listaAlquileres', JSON.stringify(this.listaAlquiler));
-    this.router.navigate(['/pago']);
-    localStorage.setItem('datosAlquileres', JSON.stringify(this.datos));
-    //this.router.navigate(['/pago']);
-    /*for (let i in this.datos){
-      this.newAlquiler.llave=llave;
-      this.newAlquiler.fecha=fechaSQL;
-      this.newAlquiler.Usuario_dpi=Number(dpi_actual);
-      this.newAlquiler.Pago_Id_transaccion=1;
-      this.newAlquiler.Pelicula_idpelicula=this.datos[i].idPel;
-      
-      
-      this.alquilerService.saveAlquiler(this.newAlquiler).subscribe(
-        res=>{
-          alert(res.message);
-        },err=>{
-          alert(err.respuesta);
-        }
-      ) 
-    }*/
-
-      
-
-//------
+    this.irAPago();
   }
 
-  
-
-
+  irAPago(){
+    this.router.navigate(['/pago']);
+  }
 }
 
 export class Articulo {
@@ -230,7 +204,3 @@ export class Articulo {
   }
 }
 
-export class Alquiler {
-  constructor(public nombre: string,public precio:number) {
-  }
-}

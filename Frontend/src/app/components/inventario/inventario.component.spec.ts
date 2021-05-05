@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { InventarioComponent } from './inventario.component';
 
 describe('InventarioComponent', () => {
@@ -8,7 +8,8 @@ describe('InventarioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InventarioComponent ]
+      declarations: [ InventarioComponent] ,
+        imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });
