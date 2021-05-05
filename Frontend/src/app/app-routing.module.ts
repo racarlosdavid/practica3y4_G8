@@ -10,6 +10,7 @@ import { InventarioComponent } from './components/inventario/inventario.componen
 import { TransferenciaComponent } from './components/transferencia/transferencia.component'
 import { RegistrouserComponent } from './components/registrouser/registrouser.component';
 import { Catalogo2Component } from './components/catalogo2/catalogo2.component';
+import { CatadminComponent } from './components/catadmin/catadmin.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,10 @@ const routes: Routes = [
 {
   path: 'catalogo',
   component: Catalogo2Component
+},
+{
+  path: 'catadmin',
+  component: CatadminComponent
 }
 
 ];

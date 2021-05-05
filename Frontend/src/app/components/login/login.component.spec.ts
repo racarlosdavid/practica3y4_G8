@@ -318,7 +318,7 @@ describe('LoginComponent - Mock servicio "logByMail"', () => {
     expect(routerspy).toHaveBeenCalledWith(['/cliente']);
   });
 });
-describe('LoginComponent - Mock servicio "getAdmin"', () => {
+describe('LoginComponent - Mock servicio "getAdmin" - Login Fail', () => {
 
   //Se busca declarar una instancia de cada componente a usar
   let component: LoginComponent;
@@ -357,8 +357,15 @@ describe('LoginComponent - Mock servicio "getAdmin"', () => {
     //Instancia de nuestro componente
     component = fixture.componentInstance;
 
+    //Simulación del objeto de retorno de la consulta
+    let objretorno = [{
+      usuario: "Testuser",
+      contrasenia: "Testcontra",
+      correo: "Testuser"
+    }]
+
     //Se utiliza el objeto mock para probar un retorno
-    mockservicio.getAdmin.and.returnValue(of('Testuser', 'Testcontra'));
+    mockservicio.getAdmin.and.returnValue(of(objretorno));
     fixture.detectChanges();
   });
 
@@ -369,7 +376,7 @@ describe('LoginComponent - Mock servicio "getAdmin"', () => {
 
     //Se ejecuta el componente donde se llama al servicio
     component.radioselect = 0;
-    component.Verifadmi('Testuser', 'Testcontra');
+    component.Verifadmi('Xuser', 'Xcontra');
 
     //Se verifica que se haya mostrado una alerta desde la respuesta del servicio
     expect(spyalert).toHaveBeenCalledWith("Datos incorrectos");
@@ -381,13 +388,13 @@ describe('LoginComponent - Mock servicio "getAdmin"', () => {
 
     //Se ejecuta el componente donde se llama al servicio
     component.radioselect = 1;
-    component.Verifadmi('Testuser', 'Testcontra');
+    component.Verifadmi('Xuser', 'Xcontra');
 
     //Se verifica que se haya mostrado una alerta desde la respuesta del servicio
     expect(spyalert).toHaveBeenCalledWith("Datos incorrectos");
   });
 });
-describe('LoginComponent - Mock servicio "getAdmin"', () => {
+describe('LoginComponent - Mock servicio "getAdmin" - Login OK', () => {
 
   //Se busca declarar una instancia de cada componente a usar
   let component: LoginComponent;
