@@ -52,7 +52,7 @@ export class TransferenciaComponent implements OnInit {
   selectPelicula(valor:String){
     if(valor == 'Seleccione'){
       alert('Debe seleccionar una pelicula!')
-      return
+      return false
     }else{
       //console.log(valor)
       this.pelicula = this.inventario[Number(valor) - 1]
@@ -61,6 +61,7 @@ export class TransferenciaComponent implements OnInit {
       let mensajeP = document.getElementById('peliTrans')
       mensajeP.innerHTML = 'Se transferirá '+ this.pelicula.name + ' a: '
       mensajeP.setAttribute('style','visiility:visible')
+      return true
     }
   }
 
