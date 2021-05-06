@@ -13,16 +13,13 @@ export class CatalogoComponent implements OnInit {
 
   inventario = [];
   lista =[];
-  idiomas:any=[];
-  planes:any=[];
   resultadoConsulta:any=[];
   
   constructor(private lectura:alquilerService,private peliculaService:peliculaService) {
   }
 
   ngOnInit(): void {
-    this.idioma();
-    this.plan();
+    //this.idioma();
     this.mostrarPeliculas();
     this.cargarPeliculas();
   }
@@ -96,90 +93,8 @@ export class CatalogoComponent implements OnInit {
     )
   }
 
-  obtenerPlan(){
-    this.peliculaService.obtenerPlan().subscribe(
-      res=>{
-        //console.log(res);
-        for(var i = 0; i < res.length; i++){
-          if (res[i].bonusDays!=null){
-            var planAux: Plan={
-              name:res[i].name,
-              servicedays:res[i].serviceDays,
-              bonusdays:res[i].bonusDays,
-              fine: Number(res[i].fine)
-            }
-            //Insertando lenguajes en la tabla aux
-            this.peliculaService.savePlan(planAux).subscribe(
-              res=>{
-                //alert(res.message);
-              },err=>{
-                //alert(err.respuesta);
-              }
-            )
-          }else{
-            var planAux2: Plan2={
-              name:res[i].name,
-              servicedays:res[i].serviceDays,
-              fine:Number(res[i].fine)
-            }
-            this.peliculaService.savePlan2(planAux2).subscribe(
-              res=>{
-                //alert(res.message);
-              },err=>{
-                //alert(err.respuesta);
-              }
-            )
-          }
-        }
-      },err=>{
-        //alert(err.respuesta);
-      }
-    );
-  }
-  insertarPlan(){
-    this.peliculaService.insertarPlan().subscribe(
-      res=> {
-        //console.log(res);
-      },
-      err => {
-        //console.log(err);
-      }
-    )
-  }
-  actualizarPlan(){
-    this.peliculaService.obtenerUltimoPlan().subscribe(
-      res=> {
-        console.log(res);
-        this.resultadoConsulta=res;
-        for(let item of this.resultadoConsulta){
-          var aux:Plan ={
-            name:item.name,
-            servicedays:item.servicedays,
-            bonusdays:item.bonusdays,
-            fine:item.fine
-          }
-          this.peliculaService.editarPlan(aux).subscribe(
-            res=>{
-              //alert(res.message);
-            },err=>{
-              //alert(err.respuesta);
-            }
-          )
-        }
-      },
-      err => {
-        console.log(err);
-      }
-    )
-  }
-
   obtenerPeliculas(){
     //Consulto la api del aux para obtener las peliculas
-    this.idiomas.push('Espanol');
-    this.idiomas.push('Ingles');
-    this.planes.push('7 dias');
-    
-    //--
     this.peliculaService.obtenerPelicula().subscribe(
       res=>{
         //console.log(res);
@@ -259,12 +174,6 @@ export class CatalogoComponent implements OnInit {
     this.obtenerIdioma();
     this.insertarIdioma();
     this.actualizarIdiomas();
-  }
-
-  plan(){
-    this.obtenerPlan();
-    this.insertarPlan();
-    //this.actualizarPlan();
   }
 
 }
