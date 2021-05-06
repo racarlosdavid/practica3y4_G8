@@ -9,7 +9,7 @@ const mysqlConnection = require('../mysql_connection');
 router.get('/',  function(req, res) 
 {
     //Mostramos en pantalla el cuerpo de la petición
-    console.log(req.body);
+    //console.log(req.body);
 
     //Realizamos la consulta de inserción
     mysqlConnection.query('select * from Pelicula', function (err, rows, fields) {

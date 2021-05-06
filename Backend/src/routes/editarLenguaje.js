@@ -12,15 +12,13 @@ router.post('/',  function(req, res)
     //console.log(req.body);
 
     //Realizamos la consulta de inserción
-    mysqlConnection.query('UPDATE Pelicula set image ='
-    +'\''+req.body.image+'\', chargerate='+
-    +req.body.chargerate+', active='+
-    +req.body.active+
-    ' WHERE name = '+
-    '\''+req.body.name+'\''
+    mysqlConnection.query('UPDATE Lenguaje set descripcion ='
+    +'\''+req.body.Description+'\''+
+    ' WHERE code = '+
+    '\''+req.body.Code+'\''
     , function(err, rows, fields) {
         if (err) throw err;
-        res.json({ message: "Datos de peliculas actualizados" });
+        res.json({ message: "Datos de idioma actualizados" });
     });
 });
 

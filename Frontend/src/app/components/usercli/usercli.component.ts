@@ -16,6 +16,7 @@ export class UsercliComponent implements OnInit {
       //Aqui van las peliculas que se van agregando al carrito
       localStorage.setItem('listaDatos', JSON.stringify(this.datos));
       //this.obtenerPeliculas();
+      this.mostrarPeliculas();
   }
 
   datos: Articulo[] = [
@@ -25,7 +26,7 @@ export class UsercliComponent implements OnInit {
 
 
   obtenerPeliculas(){
-    //Consulto la api del aux para obtener el tipo de cambio actual.
+    //Consulto la api del aux para obtener las peliculas
     this.peliculaService.obtenerPelicula().subscribe(
       res=>{
         //console.log(res);
@@ -51,17 +52,17 @@ export class UsercliComponent implements OnInit {
           )
         }
       },err=>{
-        alert(err.respuesta);
+        //alert(err.respuesta);
       }
     );
-    this.insertarPeliculas();
-      this.actualizarPeliculas();
+    /*this.insertarPeliculas();
+    this.actualizarPeliculas();*/
   }
 
   insertarPeliculas(){
     this.peliculaService.insertarPelicula().subscribe(
       res=> {
-        console.log(res);
+        //console.log(res);
       },
       err => {
         console.log(err);
@@ -96,6 +97,10 @@ export class UsercliComponent implements OnInit {
     )
   }
 
-
+  mostrarPeliculas(){
+    this.obtenerPeliculas();
+    this.insertarPeliculas();
+    this.actualizarPeliculas();
+  }
 
 }
