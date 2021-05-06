@@ -9,18 +9,13 @@ const mysqlConnection = require('../mysql_connection');
 router.post('/',  function(req, res) 
 {
     //Mostramos en pantalla el cuerpo de la petición
-    //console.log(req.body);
+    console.log(req.body);
 
     //Realizamos la consulta de inserción
-    mysqlConnection.query('UPDATE Pelicula set image ='
-    +'\''+req.body.image+'\', chargerate='+
-    +req.body.chargerate+', active='+
-    +req.body.active+
-    ' WHERE name = '+
-    '\''+req.body.name+'\''
+    mysqlConnection.query('insert into Plan (name,servicedays,bonusdays,fine) select distinct name,servicedays,bonusdays,fine from TemporalPlan where not exists ( select * from Plan where (TemporalPlan.name = Plan.name) )'
     , function(err, rows, fields) {
         if (err) throw err;
-        res.json({ message: "Datos de peliculas actualizados" });
+        res.json({ message: "Plan insertado en la base de datos" });
     });
 });
 

@@ -29,6 +29,7 @@ import { UsersService } from './services/Userservice/users.service';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { Catalogo2Component } from './components/catalogo2/catalogo2.component';
 import { CatadminComponent } from './components/catadmin/catadmin.component';
+import { HistorialAdminComponent } from './components/historial-admin/historial-admin.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CatadminComponent } from './components/catadmin/catadmin.component';
     RegistrouserComponent,
     CatalogoComponent,
     Catalogo2Component,
-    CatadminComponent
+    CatadminComponent,
+    HistorialAdminComponent
   ],
   imports: [
     BrowserModule,

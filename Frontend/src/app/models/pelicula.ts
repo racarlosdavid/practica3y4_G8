@@ -14,3 +14,20 @@ export interface Pelicula2 {
     chargerate: number;
     active: number;
 }
+
+export interface Idioma {
+    Code: string;
+    Description: string;
+}
+
+export interface Plan {
+    name: string;
+    servicedays: number;
+    bonusdays: number;
+    fine: number;
+}
+export interface Plan2 {
+    name: string;
+    servicedays: number;
+    fine: number;
+}

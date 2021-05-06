@@ -12,15 +12,12 @@ router.post('/',  function(req, res)
     //console.log(req.body);
 
     //Realizamos la consulta de inserción
-    mysqlConnection.query('UPDATE Pelicula set image ='
-    +'\''+req.body.image+'\', chargerate='+
-    +req.body.chargerate+', active='+
-    +req.body.active+
-    ' WHERE name = '+
-    '\''+req.body.name+'\''
+    mysqlConnection.query('INSERT INTO TemporalLenguaje (code,descripcion) VALUES ('
+    +'\''+req.body.Code+'\''+
+    ',\''+req.body.Description+'\')'
     , function(err, rows, fields) {
         if (err) throw err;
-        res.json({ message: "Datos de peliculas actualizados" });
+        res.json({ message: "Pelicula insertada en la base de datos" });
     });
 });
 
