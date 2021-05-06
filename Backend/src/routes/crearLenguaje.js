@@ -9,18 +9,13 @@ const mysqlConnection = require('../mysql_connection');
 router.post('/',  function(req, res) 
 {
     //Mostramos en pantalla el cuerpo de la petición
-    //console.log(req.body);
+    console.log(req.body);
 
     //Realizamos la consulta de inserción
-    mysqlConnection.query('UPDATE Pelicula set image ='
-    +'\''+req.body.image+'\', chargerate='+
-    +req.body.chargerate+', active='+
-    +req.body.active+
-    ' WHERE name = '+
-    '\''+req.body.name+'\''
+    mysqlConnection.query('insert into Lenguaje (code,descripcion) select distinct code,descripcion from TemporalLenguaje where not exists ( select * from Lenguaje where (TemporalLenguaje.code = Lenguaje.code) )'
     , function(err, rows, fields) {
         if (err) throw err;
-        res.json({ message: "Datos de peliculas actualizados" });
+        res.json({ message: "Lenguaje insertado en la base de datos" });
     });
 });
 

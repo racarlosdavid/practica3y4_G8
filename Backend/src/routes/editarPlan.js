@@ -12,10 +12,10 @@ router.post('/',  function(req, res)
     //console.log(req.body);
 
     //Realizamos la consulta de inserción
-    mysqlConnection.query('UPDATE Pelicula set image ='
-    +'\''+req.body.image+'\', chargerate='+
-    +req.body.chargerate+', active='+
-    +req.body.active+
+    mysqlConnection.query('UPDATE Plan set servicedays ='
+    +'\''+req.body.servicedays+'\', bonusdays='+
+    +req.body.bonusdays+', fine='+
+    +req.body.fine+
     ' WHERE name = '+
     '\''+req.body.name+'\''
     , function(err, rows, fields) {

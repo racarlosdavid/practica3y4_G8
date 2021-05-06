@@ -17,5 +17,10 @@ export class MenuadminComponent implements OnInit {
       this.router.navigate(['']);
     }
   }
+  
+  cerrarSesion(){
+    localStorage.clear()
+    this.router.navigate(['']);
+  }
 
 }

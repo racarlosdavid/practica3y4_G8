@@ -1,6 +1,7 @@
 import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/Usuario';
+import { Router } from '@angular/router';
 
 import { UsersService } from '../../services/Userservice/users.service'
 
@@ -22,7 +23,7 @@ export class RegistrouserComponent implements OnInit {
     edad: ''
   };
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +39,7 @@ export class RegistrouserComponent implements OnInit {
       res =>{
         console.log(res);
         alert('Usuario ingresado con éxito');
+        this.router.navigate(['']);
       },
       err =>{
         console.error(err);

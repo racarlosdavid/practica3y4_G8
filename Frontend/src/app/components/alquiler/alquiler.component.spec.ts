@@ -137,7 +137,7 @@ it('Caso de prueba con Mock para verficarCampos(): verificar si se llamo la func
   {
       var spy = spyOn(window, 'alert').and.callThrough();
       mock.mostrarTotal();
-      expect(spy).toHaveBeenCalledWith('El total es de Q100');
+      expect(spy).toHaveBeenCalledWith('El total es de 100');
   });
 
   it('Caso de prueba con Mock para alquilar(): verificar si se llamo la funcion irAPago()', () => 

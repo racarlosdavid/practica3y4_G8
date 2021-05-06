@@ -110,7 +110,7 @@ export class AlquilerComponent {
   mostrarTotal(){
     this.lsTotal=this.sumaSubtotales(this.datos);
     localStorage.setItem('total', this.lsTotal.toString());
-    alert('El total es de Q'+this.lsTotal);
+    alert('El total es de '+this.lsTotal);
   }
 
   verificarCampos(valor1,valor2): boolean {
