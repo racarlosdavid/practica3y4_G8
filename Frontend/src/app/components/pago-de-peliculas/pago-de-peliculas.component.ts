@@ -38,13 +38,7 @@ export class PagoDePeliculasComponent implements OnInit {
 
 
     //Consulto la api del aux para obtener el tipo de cambio actual.
-    this.pagoService.obtenerMoneda().subscribe(
-      res=>{
-        this.moneda = res[0].total;
-      },err=>{
-        alert(err.respuesta);
-      }
-    );
+    this.getExchange();
 
     //Obtengo el dpi del usuario logueado
     this.local_dpi = Number(localStorage.getItem('dpi'));
@@ -91,6 +85,16 @@ export class PagoDePeliculasComponent implements OnInit {
     })()
   }
 
+  getExchange(){
+    this.pagoService.obtenerMoneda().subscribe(
+      res=>{
+        this.moneda = res[0].total;
+      },err=>{
+        alert(err.respuesta);
+      }
+    );
+  }
+
   encriptarTarjeta(numero_tarjeta:string){
     let tarjeta_encriptada = '';
 
@@ -134,7 +138,7 @@ export class PagoDePeliculasComponent implements OnInit {
   }
 
   procesar(){
-    console.log(this.local_dpi," local storage del user");
+    //console.log(this.local_dpi," local storage del user");
     //let salida = "La tarjeta tiene 16 digitos " + this.validarTarjeta16Digitos(this.dataPago.Num_tarjeta) + " el cvv tiene 3 digitos " + this.validarCodigoCVV(this.dataPago.cvv)+
     //" validacion de fecha "+ this.validarFecha(this.dataPago.Fecha_vencimiento) ;
     //console.log(salida);
