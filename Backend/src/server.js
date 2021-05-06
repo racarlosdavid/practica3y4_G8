@@ -29,16 +29,11 @@ app.use('/crearAlquiler', require('./routes/crearAlquiler'));
 app.use('/tablaTemporal', require('./routes/tablaTemporal'));
 app.use('/crearPelicula', require('./routes/crearPelicula'));
 app.use('/crearLenguaje', require('./routes/crearLenguaje'));
-app.use('/crearPlan', require('./routes/crearPlan'));
 app.use('/ultimaIteracion', require('./routes/ultimaIteracion'));
 app.use('/editarPelicula', require('./routes/editarPelicula'));
 app.use('/editarLenguaje', require('./routes/editarLenguaje'));
-app.use('/editarPlan', require('./routes/editarPlan'));
 app.use('/temporalLenguaje', require('./routes/temporalLenguaje'));
-app.use('/temporalPlan', require('./routes/temporalPlan'));
-app.use('/temporalPlan2', require('./routes/temporalPlan2'));
 app.use('/ultimoLenguaje', require('./routes/ultimoLenguaje'));
-app.use('/ultimoPlan', require('./routes/ultimoPlan'));
 
 
 app.listen(port,()=>{

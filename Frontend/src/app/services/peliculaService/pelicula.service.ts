@@ -34,10 +34,6 @@ export class peliculaService {
   obtenerIdioma(): Observable<any> {
     return this.http.get(`${this.API_AUX2}`);
   }
-
-  obtenerPlan(): Observable<any> {
-    return this.http.get(`${this.API_AUX3}`);
-  }
   
   //Método para inserción de pelicula temporal
   savePelicula(pelicula: Pelicula): Observable<any>
@@ -49,15 +45,6 @@ export class peliculaService {
   {
     return this.http.post(`${this.API_URI}/temporalLenguaje`, idioma);
   }
-  //Método para inserción de plan temporal
-  savePlan(plan: Plan): Observable<any>
-  {
-    return this.http.post(`${this.API_URI}/temporalPlan`, plan);
-  }
-  savePlan2(plan: Plan2): Observable<any>
-  {
-    return this.http.post(`${this.API_URI}/temporalPlan2`, plan);
-  }
 
   insertarPelicula(): Observable<any>
   {
@@ -67,19 +54,12 @@ export class peliculaService {
   {
     return this.http.post(`${this.API_URI}/crearLenguaje`, null);
   }
-  insertarPlan(): Observable<any>
-  {
-    return this.http.post(`${this.API_URI}/crearPlan`, null);
-  }
 
   obtenerUltima(){
     return this.http.get(`${this.API_URI}/ultimaIteracion`);
   }
   obtenerUltimoIdioma(){
     return this.http.get(`${this.API_URI}/ultimoLenguaje`);
-  }
-  obtenerUltimoPlan(){
-    return this.http.get(`${this.API_URI}/ultimoPlan`);
   }
 
   editarPelicula(pelicula: Pelicula2): Observable<any>
@@ -89,10 +69,6 @@ export class peliculaService {
   editarLenguaje(idioma: Idioma): Observable<any>
   {
     return this.http.post(`${this.API_URI}/editarLenguaje`, idioma);
-  }
-  editarPlan(plan: Plan): Observable<any>
-  {
-    return this.http.post(`${this.API_URI}/editarPlan`, plan);
   }
 
 }
