@@ -33,11 +33,11 @@ describe('alquilerComponent', () => {
     expect (component.verificarCampos(x1,x2)).toEqual(true);
   }));
 
-  it('Prueba para generarLlave(): La llave generada debe ser 1234Y2021M1D1H1M1S1', async (()=>{
+  it('Prueba para generarLlave(): La llave generada debe ser 1234Y2021M2D1H1M1S1', async (()=>{
     var x1:string='1234';
     let x2: Date = new Date(2021,1,1,1,1,1,1);
     
-    expect (component.generarLlave(x1,x2)).toEqual("1234Y2021M1D1H1M1S1");
+    expect (component.generarLlave(x1,x2)).toEqual("1234Y2021M2D1H1M1S1");
   }));
   it('Prueba para calcularSubTotal(): El subTotal debe ser 44', async (()=>{
     var x1:number=11;

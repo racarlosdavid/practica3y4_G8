@@ -203,7 +203,7 @@ export class AlquilerComponent {
   }
 
   generarLlave(dpi_:string,fecha:Date):string{
-    return (dpi_+"Y"+fecha.getFullYear()+"M"+fecha.getMonth()+"D"+fecha.getDay()+"H"+fecha.getHours()+"M"+fecha.getMinutes()+"S"+fecha.getSeconds());
+    return (dpi_+"Y"+fecha.getFullYear()+"M"+(fecha.getMonth()+1)+"D"+fecha.getDate()+"H"+fecha.getHours()+"M"+fecha.getMinutes()+"S"+fecha.getSeconds());
   }
 
 
