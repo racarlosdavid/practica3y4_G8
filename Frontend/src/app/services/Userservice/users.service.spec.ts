@@ -83,19 +83,14 @@ describe('UsersService', () => {
   //-------------Prueba para getUser() .toBe()
   it('Caso de prueba para: getAdmin(), se espera una petición GET', () =>
   {
-    //Se llama al servicio y se inyecta la respuesta correcta
     service.getAdmin().subscribe((res) => {
-      //Se coloca la respuesta pregenerada
       expect(res).toEqual(resadmin);
     })
 
-    //En request se asigna la ruta del servicio
     const req = httpmock.expectOne(`${API_URL}/admincheck`);
     
-    //Se realiza la prueba del método
     expect(req.request.method).toBe('GET');
 
-    //Se espera a que las tareas terminen
     req.flush(resadmin);
   });
   //-------------Prueba para saveUser() .toBe()
@@ -119,19 +114,14 @@ describe('UsersService', () => {
   //-------------Prueba para logByUser() .toBe()
   it('Caso de prueba para: logByUser(), se espera una petición POST', () =>
   {
-    //Se llama al servicio y se inyecta la respuesta correcta
     service.logByUser(loguser).subscribe((res) => {
-      //Se coloca la respuesta pregenerada
       expect(res).toEqual(logres);
     })
 
-    //En request se asigna la ruta del servicio
     const req = httpmock.expectOne(`${API_URL}/logusuario`);
     
-    //Se realiza la prueba del método
     expect(req.request.method).toBe('POST');
 
-    //Se espera a que las tareas terminen
     req.flush(logres);
   });
   //-------------Prueba para logByMail() .toBe()
