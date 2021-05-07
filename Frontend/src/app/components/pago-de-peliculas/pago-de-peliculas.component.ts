@@ -117,6 +117,12 @@ export class PagoDePeliculasComponent implements OnInit {
     return false;
   }
 
+  validarTolalObtenido(){
+    if (this.dataPago.Total!=null) {
+      alert('El total de la compra es '+this.dataPago.Total);
+    }
+  }
+
   validarCodigoCVV(codigo:number){
     if(codigo <= 999)
       return true;
