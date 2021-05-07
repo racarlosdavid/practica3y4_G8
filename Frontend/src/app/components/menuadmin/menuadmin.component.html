@@ -1,0 +1,40 @@
+<!--Barra de navegación inicial-->
+<nav class="navbar navbar-expand-lg navbar-dark Bot">
+    <div class="container-fluid">        
+        <a class="navbar-brand" style="margin-right: 300px;">  <i class="fas fa-ticket-alt fa-4x"></i></a>
+        <a class="navbar-brand animate__animated animate__zoomIn" href="/" style="font-size: 100px;">Administrador</a>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;"></ul>
+            <form class="d-flex">
+                <input #tipbusqueda class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" >Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!--Botones de control-->
+<div class="container-fluid">
+    <div class="row bg-dark text-white p-3 Fbot">
+        <div class="btn-group animate__animated animate__zoomIn">
+        <!--    <button type="button" class="btn btn-secondary" data-toggle="dropdown">
+                <i class="fa fa-user-circle"></i> Usuarios <span class="caret"></span>
+            </button>  
+        -->
+            <button type="button" class="btn btn-light" data-toggle="dropdown" onclick="location.href='/catadmin'">
+                <i class="fa fa-archive"></i> Catálogo de películas <span class="caret"></span>
+            </button>          
+            <button type="button" class="btn btn-secondary" data-toggle="dropdown" onclick="location.href='/historialAdmin'">
+                <i class="fa fa-history"></i> Historial de transacciones <span class="caret"></span>
+            </button>  
+                    
+            <button type="button" class="btn btn-light" data-toggle="dropdown" (click)='cerrarSesion()'>
+                <i class="fa fa-sign-out-alt"></i> Cerrar sesion <span class="caret"></span>
+            </button>    
+        </div>
+    </div>        
+</div>
+
+<!--Espaciado-->
+<ul style="margin-top: 40px;"><h1></h1></ul>

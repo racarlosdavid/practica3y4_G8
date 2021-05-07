@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*Clases para el login*/
+.body2
+{
+    font-family: 'Original Surfer', cursive;
+    /*Fondo degradado: https://cssgradient.io/ */    
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 54%, rgba(0,212,255,1) 100%);
+}
+.Bot
+{
+    /*Fondo degradado: https://uigradients.com/#DayTripper */
+    /*background: linear-gradient(to right, #3a7bd5, #3a6073);*/
+    background: linear-gradient(to top, #0f0c29, #302b63, #24243e);
+    font-family: 'Original Surfer', cursive;
+}
+.Fbot
+{
+    font-family: 'Original Surfer', cursive;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

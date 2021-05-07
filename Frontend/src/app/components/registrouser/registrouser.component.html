@@ -1,0 +1,72 @@
+<div class="body2">
+    <!--Barra de navegación inicial-->
+    <nav class="navbar navbar-expand-lg navbar-dark Bot">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="margin-right: 400px;"> <i class="fas fa-ticket-alt fa-4x"></i></a>
+            <a class="navbar-brand animate__animated animate__flipInX" routerLink="/"
+                style="font-size: 100px;">BlockBusted</a>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;"></ul>
+                <form class="d-flex">
+                    <a class="navbar-brand" style="margin-left: 290px;"> <i class="fas fa-ticket-alt fa-4x"></i></a>
+                    <!--<input #tipbusqueda class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" >Buscar</button>-->
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!--Espaciado-->
+    <ul style="margin-top: 60px;">
+        <h1></h1>
+    </ul>
+
+    <!-- Otra forma de centrar es colocando el div class="card"
+    dentro de una etiqueta row"> -->
+    <div class="row">
+        <div class="col-md-4 offset-md-4" style="margin-bottom: 30px;">
+            <div class="card text-center animate__animated animate__zoomIn">
+                <div class="card-header bg-dark text-white justify-content-between align-items-center">
+                    <label style="font-size: 30px"> Formulario de registro</label>
+                </div>
+                <div class="card-body">
+                    <form id="idform">
+                        <label for="floatingTextarea" style="font-size: 80px; margin-bottom: 15px; color:midnightblue"><i class="fas fa-portrait"></i></label>
+                        <div class="form-group">
+                            <!-- <label style="font-size: 25px;"><i class="fas fa-user-circle"></i> Usuario</label> -->
+                            <input type="text" name="nombre" [(ngModel)]="newuser.nombre" placeholder="Nombre" class="form-control"
+                                style="margin-bottom: 15px" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="apellido" [(ngModel)]="newuser.apellido" placeholder="Apellido" class="form-control"
+                                style="margin-bottom: 15px">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="edad" [(ngModel)]="newuser.edad" placeholder="Edad" class="form-control"
+                                style="margin-bottom: 15px">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="dpi" [(ngModel)]="newuser.dpi" placeholder="DPI" class="form-control"
+                                style="margin-bottom: 15px">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="correo" [(ngModel)]="newuser.correo" placeholder="Correo" class="form-control"
+                                style="margin-bottom: 15px">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="usuario" [(ngModel)]="newuser.usuario" placeholder="Usuario" class="form-control"
+                                style="margin-bottom: 15px">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="contra" [(ngModel)]="newuser.contrasenia" placeholder="Contraseña" class="form-control"
+                                style="margin-bottom: 30px;">
+                        </div>
+                        <!-- <button class="btn btn-success btn-block" (click)="edit ? updateGame() : saveNewGame()"> -->
+                        <button class="btn btn-success btn-block" style="font-size: large;" (click)="SaveUser()" >Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

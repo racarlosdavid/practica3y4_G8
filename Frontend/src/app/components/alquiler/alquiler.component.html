@@ -1,0 +1,80 @@
+<app-menu></app-menu>
+
+<style>
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content2 {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 1500px;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+<div class="content" role="main">
+  <h1 class="bg-dark text-white p-3">Carrito</h1>
+    <table mat-table [dataSource]="datos" class="mat-elevation-z8" #tabla1>
+
+    <ng-container matColumnDef="codigo">
+      <th mat-header-cell *matHeaderCellDef> Pelicula </th>
+      <td mat-cell *matCellDef="let articulo"> {{articulo.nombre}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Precio unitario </th>
+      <td mat-cell *matCellDef="let articulo"> {{articulo.precio}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="precio">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let articulo"> {{articulo.cantidad}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="borrar">
+      <th mat-header-cell *matHeaderCellDef> ¿Quitar? </th>
+      <td mat-cell *matCellDef="let j = index;">
+        <button mat-raised-button color="primary" focusable="false" (click)="borrarFila(j)">
+          ¿Quitar?
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="subtotal">
+      <th mat-header-cell *matHeaderCellDef> SubTotal </th>
+      <td mat-cell *matCellDef="let articulo"> {{articulo.subtotal}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+  </table>
+</div>
+<div class="content" role="main">
+  <div class="contenedor">
+  
+    <mat-form-field>
+      <mat-select placeholder="Peliculas" [(ngModel)]="seleccionada2" name="operacion">
+        <mat-option *ngFor="let op of listadoPeliculas" [value]="op.nombre">
+          {{op.nombre}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [(ngModel)]="articuloselect.cantidad" type="number" placeholder="Cantidad">
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="agregar()">Agregar</button>
+    <button mat-raised-button color="primary" (click)="mostrarTotal()">Calcular</button>
+    <button mat-raised-button color="primary" (click)="alquilar()">Aceptar</button>
+  
+  </div>
+</div>
+<div class="content2" role="main">
+  <app-catalogo></app-catalogo>
+</div>

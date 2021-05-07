@@ -1,0 +1,70 @@
+<!doctype html>
+<app-menu></app-menu>
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>Pago de Peliculas</h2>
+   </div>
+
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Total de la compra</span>
+      </h4>
+      <ul class="list-group mb-3">
+ 
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (USD)  $ {{dataPago.Total}}</span>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-8 order-md-1">
+      <form class="needs-validation" novalidate>
+        <h4 class="mb-3">Informacion</h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cc-name">Nombre en la tarjeta</label>
+            <input type="text"  [(ngModel)]="dataPago.Nombre_tarjeta" class="form-control" name="Nombre_tarjeta" placeholder="" required>
+            <small class="text-muted">Nombre completo en la tarjeta</small>
+            <div class="invalid-feedback">
+              Debe ingresar el nombre en la tarjeta
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cc-number">Numero de la tarjeta</label>
+            <input type="text" [(ngModel)]="dataPago.Num_tarjeta" class="form-control" name="Num_tarjeta"  placeholder="" required>
+            <div class="invalid-feedback">
+              Debe ingresar el numbero de la tarjeta 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="cc-expiration">Fecha de Expiracion</label>
+            <input type="text" [(ngModel)]="dataPago.Fecha_vencimiento" class="form-control" name="Fecha_vencimiento" placeholder="MM/YY" required>
+            <div class="invalid-feedback">
+              Debe ingresar la fecha en que expira la tarjeta
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="cc-cvv">CVV</label>
+            <input type="text" [(ngModel)]="dataPago.CVV" class="form-control" name="cc-cvv" placeholder="" required>
+            <div class="invalid-feedback">
+              Debe ingresar el codigo de seguridad
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="moneda-from-api">Moneda</label>
+            <input type="text" [(ngModel)]="moneda" class="form-control" name="moneda" placeholder="" required>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit"  (click)="procesar()">Procesar Pago</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021 AYD1</p>
+  </footer>
+</div>

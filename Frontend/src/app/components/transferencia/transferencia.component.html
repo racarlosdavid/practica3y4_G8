@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="Fbot">
+    <h1 class="text-center">Transferencia de películas</h1>  
+</div>
+<div class="inventario">
+    <div class="row">
+        <div class="col">
+            <h3>Seleecione las películas a transferir</h3>
+            <div class="form-group" wfd-id="291">
+                <select class="form-select" wfd-id="292" id='dropPeliculas' (change)='selectPelicula($event.target.value)'>
+                  <option selected="">Seleccione</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+            <h3>Buscar usuario</h3>
+            <div class="form-group has-success" wfd-id="328">
+                <input type="text" placeholder="usuario" class="form-control" id="inputValid" wfd-id="505" #username>
+                <!--<div class="valid-feedback" wfd-id="329">Usuario correcto</div>-->
+            </div>
+            <button type="button" class="btn" (click)='buscarUser(username)'>Buscar</button>
+        </div>
+        <div >
+            <h3 id='tituloTrans' style="visibility: hidden;">Transferencia:</h3>
+            <h3 id='peliTrans' style="visibility: hidden;"></h3>
+            <button id='btnTrans' type="button" class="btn" style="visibility: hidden;" (click)='transferir()'>Transferir</button>
+        </div>
+    </div>
+</div>
+
