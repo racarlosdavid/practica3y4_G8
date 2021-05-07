@@ -198,9 +198,10 @@ export class PagoDePeliculasComponent implements OnInit {
       
       this.alquilerService.saveAlquiler(this.newAlquiler).subscribe(
         res=>{
-          alert(res.message);
+          console.log(res.message);
+          //alert(res.message);
         },err=>{
-          alert(err.respuesta);
+          //alert(err.respuesta);
         }
       )
 

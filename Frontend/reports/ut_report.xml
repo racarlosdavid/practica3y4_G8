@@ -1,115 +1,89 @@
 <testExecutions version="1">
-  <file path="src/app/components/menuadmin/menuadmin.component.spec.ts">
-    <testCase name="MenuadminComponent - Mock LocalStorage Prueba para: ngOnInit(), se espera que se verifique el dpi del usuario al inicio y al estar vacío se redirige al Login" duration="52"/>
-  </file>
-  <file path="src/app/services/Historial/historial-compra.service.spec.ts">
-    <testCase name="HistorialCompraService should be created" duration="7"/>
-  </file>
-  <file path="src/app/components/login/login.component.spec.ts">
-    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login OK Caso de prueba para Verifadmi(), se espera que el objeto admin tenga definida la credencial dpi" duration="81"/>
-    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login OK Caso de prueba para Verifadmi(), se espera que las credenciales del servicio redireccionen a la pestaña &quot;/admin&quot;" duration="44"/>
-  </file>
-  <file path="src/app/services/Userservice/users.service.spec.ts">
-    <testCase name="UsersService Caso de prueba para: logByMail(), se espera una petición POST" duration="8"/>
-    <testCase name="UsersService Caso de prueba para: saveUser(), se espera una petición POST" duration="6"/>
-    <testCase name="UsersService Caso de prueba para: logByUser(), se espera una petición POST" duration="4"/>
-    <testCase name="UsersService Caso de prueba para: getUser(), se espera una petición GET" duration="3"/>
-    <testCase name="UsersService Caso de prueba para: getAdmin(), se espera una petición GET" duration="3"/>
-  </file>
-  <file path="src/app/components/historialcompra/historialcompra.component.spec.ts">
-    <testCase name="HistorialcompraComponent should create" duration="18"/>
-  </file>
-  <file path="src/app/components/inventario/inventario.component.spec.ts">
-    <testCase name="InventarioComponent Caso de prueba para: cargarPeliculas(), se espera que se carguen las peliculas." duration="18"/>
-  </file>
-  <file path="src/app/services/PagoService/pago.service.spec.ts">
-    <testCase name="PagoService should be created" duration="4"/>
+  <file path="src/app/components/registrouser/registrouser.component.spec.ts">
+    <testCase name="RegistrouserComponent - Mock servicio &quot;saveUser&quot; Caso de prueba para SaveUser(), se espera una respuesta exitosa con el mensaje &quot;Usuario ingresado con éxito&quot;" duration="100"/>
   </file>
   <file path="src/app/components/pago-de-peliculas/pago-de-peliculas.component.spec.ts">
-    <testCase name="PagoDePeliculasMocks Validar que la tarjeta se encripte correctamente" duration="1"/>
-    <testCase name="PagoDePeliculasMocks Validar que el codigo cvv 51234 es invalido , se espera false" duration="1"/>
-    <testCase name="PagoDePeliculasMocks Calcular el total una vez aplicado el tipo de cambio, se espera 850" duration="1"/>
-    <testCase name="PagoDePeliculasMocks Validar que la tarjeta tenga 16 digitos" duration="1"/>
-    <testCase name="PagoDePeliculasMocks Validar que el formato de la fecha sea correcto" duration="1"/>
-    <testCase name="PagoDePeliculasMocks Validar que la fecha 13/19 se invalida, se espera false" duration="1"/>
-    <testCase name="PagoDePeliculasMocks Validar que el codigo cvv tengo solamente 3 digitos" duration="4"/>
-    <testCase name="PagoDePeliculasMocks Validar que la tarjeta tenga 16 digitos, se va a forzar que sea falso, se espera falso" duration="1"/>
+    <testCase name="PagoDePeliculasMocks Validar que el codigo cvv 51234 es invalido , se espera false" duration="6"/>
     <testCase name="PagoDePeliculasMocks Validar que la tarjeta tenga 16 digitos" duration="2"/>
+    <testCase name="PagoDePeliculasMocks Validar que la fecha 13/19 se invalida, se espera false" duration="1"/>
+    <testCase name="PagoDePeliculasMocks Validar que la tarjeta se encripte correctamente" duration="4"/>
+    <testCase name="PagoDePeliculasMocks Validar que la tarjeta tenga 16 digitos" duration="2"/>
+    <testCase name="PagoDePeliculasMocks Validar que la tarjeta tenga 16 digitos, se va a forzar que sea falso, se espera falso" duration="3"/>
+    <testCase name="PagoDePeliculasMocks Calcular el total una vez aplicado el tipo de cambio, se espera 850" duration="1"/>
+    <testCase name="PagoDePeliculasMocks Validar que el formato de la fecha sea correcto" duration="1"/>
+    <testCase name="PagoDePeliculasMocks Validar que el codigo cvv tengo solamente 3 digitos" duration="1"/>
   </file>
-  <file path="src/app/components/login/login.component.spec.ts">
-    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login Fail Caso de prueba para Verifadmi(), se espera que se muestre una alerta con el mensaje &quot;Datos incorrectos&quot; luego de la respuesta del servicio" duration="14"/>
-    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login Fail Caso de prueba para Verifadmi(), se espera que se muestre sola alerta por datos incorrectos" duration="19"/>
-  </file>
-  <file path="src/app/components/registrouser/registrouser.component.spec.ts">
-    <testCase name="RegistrouserComponent Caso de prueba para: LimpiarForm(), se espera un anuncio en consola de formulario limpio" duration="40"/>
-    <testCase name="RegistrouserComponent Caso de prueba para: CastearDatos(), se espera que los datos de retorno sean números" duration="12"/>
-  </file>
-  <file path="src/app/components/menu/menu.component.spec.ts">
-    <testCase name="MenuComponent - Mock LocalStorage Prueba para: CerrarSesion(), se espera que el método &quot;clear()&quot; de localStorage sea llamado y lo limpie" duration="28"/>
-    <testCase name="MenuComponent - Mock LocalStorage Prueba para: ngOnInit(), se espera que se verifique el dpi del usuario al inicio y al estar vacío se redirige al Login" duration="12"/>
-  </file>
-  <file path="src/app/components/login/login.component.spec.ts">
-    <testCase name="LoginComponent - Router Prueba para: Registro(), se espera que router redireccione a &quot;/registro&quot;" duration="11"/>
-  </file>
-  <file path="src/app/components/alquiler/alquiler.component.spec.ts">
-    <testCase name="AlquilerMocks Caso de prueba con Mock para verficarCampos(): verificar si se llamo la funcion verificarCampos()" duration="3"/>
-    <testCase name="AlquilerMocks Caso de prueba con Mock para alquilar(): verificar si se llamo la funcion irAPago()" duration="2"/>
-    <testCase name="AlquilerMocks Caso de prueba con Mock para renderizarColumnas(): verificar si se llamo la funcion renderizarColumnas()" duration="2"/>
-    <testCase name="AlquilerMocks Caso de prueba con Mock para mostrarTotal(): verificar si la alerta con el total se muestra correctamente" duration="1"/>
-    <testCase name="AlquilerMocks Caso de prueba con Mock para confirmaBorrar(): verificar si se llamo la funcion confirmaBorrar()" duration="1"/>
-  </file>
-  <file path="src/app/components/login/login.component.spec.ts">
-    <testCase name="LoginComponent - Mock servicio &quot;getUser&quot; Caso de prueba para Listarusuarios(), se espera que retorne el mensaje &quot;Prueba exitosa&quot;" duration="16"/>
-    <testCase name="LoginComponent Caso de prueba para: Veriftipousuario(), se espera recibir verdadero" duration="19"/>
-    <testCase name="LoginComponent Caso de prueba para: Verifcliente(), se espera que se llame el método del login por correo" duration="20"/>
-    <testCase name="LoginComponent Caso de prueba para: radiod2(), se espera que el valor de &quot;radioselect&quot; sea 1" duration="18"/>
-    <testCase name="LoginComponent Prueba para: Capturadatos(), se espera que se llame al método Verifcliente()" duration="20"/>
-    <testCase name="LoginComponent Caso de prueba para: radiod(), se espera que el valor de &quot;radioselect&quot; no sea 1" duration="25"/>
-    <testCase name="LoginComponent Caso de prueba para: Capturatipo(), se espera que el tipo de usuario sea menor o igual que 0" duration="17"/>
-    <testCase name="LoginComponent Caso de prueba para: Verifcliente(), se espera que se llame el método del login por usuario" duration="19"/>
-    <testCase name="LoginComponent Caso de prueba para: Veriftipousuario(), se espera una alerta con mensaje de corrección si el tipo de usuario es inválido" duration="19"/>
-    <testCase name="LoginComponent Prueba para: Capturadatos(), se espera que se llame al método Verifadmi() una vez" duration="21"/>
-    <testCase name="LoginComponent Caso de prueba para: Verifcamposllenos(), se espera no recibir falso" duration="27"/>
-    <testCase name="LoginComponent Caso de prueba para: Verifcamposllenos(), se espera no recibir verdadero" duration="25"/>
-    <testCase name="LoginComponent - Mock servicio &quot;logByMail&quot; Caso de prueba para getByMail(), se espera que el router redireccione a &quot;/cliente&quot; luego de la respuesta del servicio" duration="23"/>
-  </file>
-  <file path="src/app/components/catalogo2/catalogo2.component.spec.ts">
-    <testCase name="Catalogo2Component should create" duration="13"/>
-  </file>
-  <file path="src/app/components/login/login.component.spec.ts">
-    <testCase name="LoginComponent - Mock servicio &quot;logByUser&quot; Caso de prueba para getByUser(), se espera que el localStorage sea llamado una vez desde la respuesta del servicio" duration="21"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should have as title 'Frontend'" duration="13"/>
-    <testCase name="AppComponent should create the app" duration="12"/>
-  </file>
-  <file path="src/app/components/alquiler/alquiler.component.spec.ts">
-    <testCase name="alquilerComponent Prueba para verificarCampos(): Se espera recibir true" duration="5"/>
-    <testCase name="alquilerComponent Prueba para verificarCampos(): Se espera recibir false" duration="3"/>
-    <testCase name="alquilerComponent Prueba para crearArticulo(): Debe retornar un objeto Articulo con los datos indicados" duration="2"/>
-    <testCase name="alquilerComponent Prueba para getFfuYear(): Debe retornar 2021" duration="5"/>
-    <testCase name="alquilerComponent Prueba para sumarSubtotales(): El total debe ser 4444" duration="3"/>
-    <testCase name="alquilerComponent Prueba para calcularSubTotal(): El subTotal debe ser 44" duration="6"/>
-  </file>
-  <file path="src/app/components/registrouser/registrouser.component.spec.ts">
-    <testCase name="RegistrouserComponent - Mock servicio &quot;saveUser&quot; Caso de prueba para SaveUser(), se espera una respuesta exitosa con el mensaje &quot;Usuario ingresado con éxito&quot;" duration="14"/>
+  <file path="src/app/components/inventario/inventario.component.spec.ts">
+    <testCase name="InventarioComponent Caso de prueba para: cargarPeliculas(), se espera que se carguen las peliculas." duration="25"/>
   </file>
   <file path="src/app/components/transferencia/transferencia.component.spec.ts">
-    <testCase name="TransferenciaComponent Caso de prueba para: selectPelicula(valor:String), se espera una alerta." duration="32"/>
-    <testCase name="TransferenciaComponent prueba para selectPelicula(valor:String), se espera que retorne un valor false" duration="1">
-      <skipped message="Skipped"/>
-    </testCase>
+    <testCase name="TransferenciaComponent Caso de prueba para: selectPelicula(valor:String), se espera una alerta." duration="46"/>
     <testCase name="TransferenciaComponent prueba para selectPelicula(valor:String), se espera que retorne un valor true" duration="1">
       <skipped message="Skipped"/>
     </testCase>
+    <testCase name="TransferenciaComponent prueba para selectPelicula(valor:String), se espera que retorne un valor false" duration="1">
+      <skipped message="Skipped"/>
+    </testCase>
   </file>
-  <file path="src/app/components/useradmin/useradmin.component.spec.ts">
-    <testCase name="UseradminComponent should create" duration="12"/>
+  <file path="src/app/components/historialcompra/historialcompra.component.spec.ts">
+    <testCase name="HistorialcompraComponent should create" duration="20"/>
+  </file>
+  <file path="src/app/components/menuadmin/menuadmin.component.spec.ts">
+    <testCase name="MenuadminComponent - Mock LocalStorage Prueba para: ngOnInit(), se espera que se verifique el dpi del usuario al inicio y al estar vacío se redirige al Login" duration="30"/>
+  </file>
+  <file path="src/app/components/login/login.component.spec.ts">
+    <testCase name="LoginComponent - Router Prueba para: Registro(), se espera que router redireccione a &quot;/registro&quot;" duration="76"/>
+  </file>
+  <file path="src/app/components/registrouser/registrouser.component.spec.ts">
+    <testCase name="RegistrouserComponent Caso de prueba para: CastearDatos(), se espera que los datos de retorno sean números" duration="13"/>
+    <testCase name="RegistrouserComponent Caso de prueba para: LimpiarForm(), se espera un anuncio en consola de formulario limpio" duration="16"/>
+  </file>
+  <file path="src/app/services/peliculaService/pelicula.service.spec.ts">
+    <testCase name="PeliculaService Caso de prueba para: savePelicula(), se espera una petición POST" duration="13"/>
+    <testCase name="PeliculaService Caso de prueba para: obtenerPelicula(), se espera una petición GET" duration="4"/>
   </file>
   <file path="src/app/components/pago-de-peliculas/pago-de-peliculas.component.spec.ts">
-    <testCase name="PagoDePeliculasComponent should create" duration="34"/>
+    <testCase name="PagoDePeliculasComponent should create" duration="28"/>
+  </file>
+  <file path="src/app/services/Userservice/users.service.spec.ts">
+    <testCase name="UsersService Caso de prueba para: logByMail(), se espera una petición POST" duration="10"/>
+    <testCase name="UsersService Caso de prueba para: logByUser(), se espera una petición POST" duration="3"/>
+    <testCase name="UsersService Caso de prueba para: saveUser(), se espera una petición POST" duration="2"/>
+    <testCase name="UsersService Caso de prueba para: getAdmin(), se espera una petición GET" duration="3"/>
+    <testCase name="UsersService Caso de prueba para: getUser(), se espera una petición GET" duration="4"/>
+  </file>
+  <file path="src/app/components/menu/menu.component.spec.ts">
+    <testCase name="MenuComponent - Mock LocalStorage Prueba para: CerrarSesion(), se espera que el método &quot;clear()&quot; de localStorage sea llamado y lo limpie" duration="37"/>
+    <testCase name="MenuComponent - Mock LocalStorage Prueba para: ngOnInit(), se espera que se verifique el dpi del usuario al inicio y al estar vacío se redirige al Login" duration="10"/>
+  </file>
+  <file path="src/app/components/login/login.component.spec.ts">
+    <testCase name="LoginComponent - Mock servicio &quot;logByUser&quot; Caso de prueba para getByUser(), se espera que el localStorage sea llamado una vez desde la respuesta del servicio" duration="17"/>
+  </file>
+  <file path="src/app/components/catalogo2/catalogo2.component.spec.ts">
+    <testCase name="Catalogo2Component should create" duration="12"/>
+  </file>
+  <file path="src/app/services/PagoService/pago.service.spec.ts">
+    <testCase name="PagoService should be created" duration="5"/>
+  </file>
+  <file path="src/app/components/login/login.component.spec.ts">
+    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login OK Caso de prueba para Verifadmi(), se espera que el objeto admin tenga definida la credencial dpi" duration="12"/>
+    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login OK Caso de prueba para Verifadmi(), se espera que las credenciales del servicio redireccionen a la pestaña &quot;/admin&quot;" duration="28"/>
+  </file>
+  <file path="src/app/components/catalogo/catalogo.component.spec.ts">
+    <testCase name="Catalogo Mock 4 Prueba con mock para nuevosDatos(), verifica que se llame un mensaje de confirmacion al actualizar los datos" duration="14"/>
   </file>
   <file path="src/app/services/Inventario/inventario.service.spec.ts">
-    <testCase name="InventarioService should be created" duration="2"/>
+    <testCase name="InventarioService should be created" duration="3"/>
+  </file>
+  <file path="src/app/components/login/login.component.spec.ts">
+    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login Fail Caso de prueba para Verifadmi(), se espera que se muestre una alerta con el mensaje &quot;Datos incorrectos&quot; luego de la respuesta del servicio" duration="11"/>
+    <testCase name="LoginComponent - Mock servicio &quot;getAdmin&quot; - Login Fail Caso de prueba para Verifadmi(), se espera que se muestre sola alerta por datos incorrectos" duration="12"/>
+  </file>
+  <file path="src/app/components/catalogo/catalogo.component.spec.ts">
+    <testCase name="Catalogo Mock 3 Prueba con mock para actualizarPeliculas(), verifica que se retorne el valor del objeto de prueba" duration="8"/>
+    <testCase name="Catalogo Mock 2 Prueba con mock para obtenerPelicual(), verifica que se retorne el valor del objeto de prueba" duration="5"/>
+  </file>
+  <file path="src/app/components/login/login.component.spec.ts">
+    <testCase name="LoginComponent - Mock servicio &quot;getUser&quot; Caso de prueba para Listarusuarios(), se espera que retorne el mensaje &quot;Prueba exitosa&quot;" duration="16"/>
   </file>
 </testExecutions>

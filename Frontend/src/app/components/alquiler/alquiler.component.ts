@@ -176,7 +176,8 @@ export class AlquilerComponent {
     this.mostrarTotal();
     let date: Date = new Date();
     let dpi_actual = (localStorage.getItem('dpi'));
-    var llave:string=dpi_actual+""+date.getFullYear()+""+date.getMonth()+""+date.getDay()+""+date.getHours()+""+date.getMinutes()+""+date.getSeconds();
+    //var llave:string=dpi_actual+"Y"+date.getFullYear()+"M"+date.getMonth()+"D"+date.getDay()+"H"+date.getHours()+"M"+date.getMinutes()+"S"+date.getSeconds();
+    var llave:string=this.generarLlave(dpi_actual,date);
     localStorage.setItem('llave_pago', llave);
 
     var fechaSQL = (new Date ((new Date((new Date(new Date())).toISOString() )).getTime() - ((new Date()).getTimezoneOffset()*60000))).toISOString().slice(0, 19).replace('T', ' ');
@@ -200,6 +201,12 @@ export class AlquilerComponent {
   irAPago(){
     this.router.navigate(['/pago']);
   }
+
+  generarLlave(dpi_:string,fecha:Date):string{
+    return (dpi_+"Y"+fecha.getFullYear()+"M"+fecha.getMonth()+"D"+fecha.getDay()+"H"+fecha.getHours()+"M"+fecha.getMinutes()+"S"+fecha.getSeconds());
+  }
+
+
 }
 
 export class Articulo {
