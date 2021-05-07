@@ -4,8 +4,8 @@ export interface Pelicula {
     image: string;
     chargerate: number;
     active: number;
-    availabilities: Array<number>;
-    languages: Array<number>;
+    availabilities: Array<number>|null;
+    languages: Array<number>|null;
 }
 
 export interface Pelicula2 {

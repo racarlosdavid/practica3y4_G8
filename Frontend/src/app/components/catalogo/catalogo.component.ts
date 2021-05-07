@@ -20,7 +20,7 @@ export class CatalogoComponent implements OnInit {
 
   ngOnInit(): void {
     //this.idioma();
-    this.mostrarPeliculas();
+    //this.mostrarPeliculas();
     this.cargarPeliculas();
   }
 
@@ -35,7 +35,7 @@ export class CatalogoComponent implements OnInit {
     })
   }
 
-  obtenerIdioma(){
+  /*obtenerIdioma(){
     this.peliculaService.obtenerIdioma().subscribe(
       res=>{
         //console.log(res);
@@ -91,6 +91,16 @@ export class CatalogoComponent implements OnInit {
         console.log(err);
       }
     )
+  }*/
+
+  peliculaAux: Pelicula={
+    id:0,
+    name: '',
+    image: '',
+    chargerate: 0,
+    active: 0,
+    availabilities: null,
+    languages: null
   }
 
   obtenerPeliculas(){
@@ -99,7 +109,7 @@ export class CatalogoComponent implements OnInit {
       res=>{
         //console.log(res);
         for(var i = 0; i < res.length; i++){
-          var peliculaAux: Pelicula={
+          /*var peliculaAux: Pelicula={
             id:res[i].id,
             name: res[i].name,
             image: res[i].image,
@@ -107,12 +117,17 @@ export class CatalogoComponent implements OnInit {
             active: Number(res[i].active),
             availabilities: res[i].availabilities,
             languages: res[i].languages
-          }
-          //console.log(peliculaAux.languages);
-          //console.log(peliculaAux);
+          }*/
+          this.peliculaAux.id=res[i].id;
+          this.peliculaAux.name= res[i].name;
+          this.peliculaAux.image= res[i].image;
+          this.peliculaAux.chargerate= res[i].chargeRate;
+          this.peliculaAux.active= Number(res[i].active);
+          this.peliculaAux.availabilities= res[i].availabilities;
+          this.peliculaAux.languages= res[i].languages;
 
           //Insertando las peliculas en la tabla aux
-          this.peliculaService.savePelicula(peliculaAux).subscribe(
+          this.peliculaService.savePelicula(this.peliculaAux).subscribe(
             res=>{
               //alert(res.message);
             },err=>{
@@ -129,10 +144,21 @@ export class CatalogoComponent implements OnInit {
   insertarPeliculas(){
     this.peliculaService.insertarPelicula().subscribe(
       res=> {
-        //console.log(res);
+        console.log(res);
       },
       err => {
         //console.log(err);
+      }
+    )
+  }
+
+  nuevosDatos(peli:Pelicula2){
+    this.peliculaService.editarPelicula(peli).subscribe(
+      res=>{
+        console.log(res.message);
+        //alert(res.message);
+      },err=>{
+        //alert(err.respuesta);
       }
     )
   }
@@ -149,13 +175,14 @@ export class CatalogoComponent implements OnInit {
             chargerate:item.chargerate,
             active:item.active
           }
-          this.peliculaService.editarPelicula(aux).subscribe(
+          this.nuevosDatos(aux);
+          /*this.peliculaService.editarPelicula(aux).subscribe(
             res=>{
               //alert(res.message);
             },err=>{
               //alert(err.respuesta);
             }
-          )
+          )*/
         }
       },
       err => {
@@ -168,12 +195,13 @@ export class CatalogoComponent implements OnInit {
     this.obtenerPeliculas();
     this.insertarPeliculas();
     this.actualizarPeliculas();
+    window.alert('Datos actualizados. Refresque la pagina para visualizar los cambios');
   }
 
-  idioma(){
+  /*idioma(){
     this.obtenerIdioma();
     this.insertarIdioma();
     this.actualizarIdiomas();
-  }
+  }*/
 
 }

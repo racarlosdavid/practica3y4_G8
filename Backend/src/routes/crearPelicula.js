@@ -15,7 +15,7 @@ router.post('/',  function(req, res)
     mysqlConnection.query('insert into Pelicula (name,image,chargerate,active) select distinct name,image,chargerate,active from TemporalPelicula where not exists ( select * from Pelicula where (TemporalPelicula.name = Pelicula.name) )'
     , function(err, rows, fields) {
         if (err) throw err;
-        res.json({ message: "Pelicula insertada en la base de datos" });
+        res.json({ message: "Pelicula insertada en la base de datos." });
     });
 });
 
